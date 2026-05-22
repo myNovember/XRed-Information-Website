@@ -2,10 +2,8 @@
   var toggle = document.getElementById('theme-toggle');
   var icon = document.getElementById('theme-icon');
   var html = document.documentElement;
-  var saved = localStorage.getItem('theme');
-  if (saved === 'light') {
-    html.classList.remove('dark');
-    html.classList.add('light');
+  // Sync icon with theme already applied by the head script
+  if (html.classList.contains('light')) {
     icon.textContent = 'light_mode';
   }
   toggle.addEventListener('click', function() {
