@@ -40,7 +40,8 @@ When adding a new page, copy the header/footer verbatim from an existing page. T
 |---|---|
 | `assets/css/common.css` | Material Design 3 CSS custom properties for dark/light themes, `.brutalist-grid`, `.grid-block`, `.layout-container`, `.bpm-table` |
 | `assets/js/tailwind-config.js` | Tailwind theme extension — maps all MD3 token names to CSS vars, sets fonts, and forces `border-radius: 0` globally |
-| `assets/js/theme-toggle.js` | Toggles `html.dark` / `html.light` classes and persists to `localStorage` |
+| `assets/js/theme-toggle.js` | Toggles `html.dark` / `html.light` classes and persists to `localStorage`. Icon sync with theme is handled in head (no localStorage read on init) |
+| `robots.txt` | Allows all paths, points to `https://www.xred.com.tw/sitemap.xml` |
 
 ### Design System
 
@@ -49,19 +50,60 @@ When adding a new page, copy the header/footer verbatim from an existing page. T
 - **Typography**: Body/headings use `Noto Sans TC`; monospace labels (section tags like `// SECTION_NAME`) use `IBM Plex Mono`. Section labels always appear as `<span class="text-primary text-xs tracking-[0.4em] uppercase font-bold font-mono">// LABEL</span>`.
 - **No rounded corners**: `* { border-radius: 0 !important; }` is enforced globally.
 - **No Tailwind purging**: Tailwind is loaded from CDN, so all utility classes are available without configuration.
+- **Images**: All images use **WebP** format. Never use PNG — convert to WebP when adding new assets.
 
 ### URL Conventions
 
-Pages are named with a `PascalCase` prefix for company pages (`AboutUs.html`, `ContactUs.html`, `Customers.html`) and `snake_case` with a category prefix for service pages (`services_BPM.html`, `services_XPertRAG.html`, `services_DominoClaw.html`, `hcl_voltmx.html`). The sitemap is maintained manually in `sitemap.xml`.
+Pages follow two naming patterns:
+
+| Type | Pattern | Examples |
+|---|---|---|
+| Company pages | `PascalCase.html` | `AboutUs.html`, `ContactUs.html`, `Customers.html` |
+| Service pages | `services_<CamelCase>.html` | `services_XPertRAG.html`, `services_QilinAI.html`, `services_OCR.html`, `services_DominoClaw.html`, `services_EIP.html`, `services_BPM.html`, `services_notesUpgrade.html` |
+| HCL standalone | `hcl_<lowercase>.html` | `hcl_voltmx.html` |
+
+Sitemap (`sitemap.xml`) is organized into four sections: 首頁與公司資訊, AI 賦能應用, 企業協同辦公, HCL 專區. Always add `lastmod` date when updating sitemap entries.
 
 ### Image Assets
 
-Service pages use category-prefixed folders (e.g., `assets/img/bpm/`, `assets/img/xpert-rag/`, `assets/img/dominoclaw/`). Company pages use `assets/img/about/`. Avoid creating duplicate directory structures — use the base `assets/img/<category>/` path consistently.
+Use category-prefixed folders under `assets/img/`:
+
+| Category | Folder | Pages |
+|---|---|---|
+| Company | `assets/img/about/` | AboutUs.html |
+| BPM | `assets/img/bpm/` | services_BPM.html |
+| X-Pert RAG | `assets/img/xpert-rag/` | services_XPertRAG.html |
+| Qilin AI | `assets/img/qilin-ai/` | services_QilinAI.html |
+| OCR | `assets/img/ocr/` | services_OCR.html |
+| DominoClaw | `assets/img/dominoclaw/` | services_DominoClaw.html |
+| EIP | `assets/img/eip/` | services_EIP.html |
+| Notes Upgrade | `assets/img/notes-upgrade/` | services_notesUpgrade.html |
+
+Avoid creating duplicate or deprecated directory structures. Old directories (`30_AboutUs/`, `hcl-landing/`, `training-consulting/`) have been removed.
+
+## Current Site Map
+
+| Page | Category |
+|---|---|
+| `index.html` | Home |
+| `AboutUs.html` | Company |
+| `ContactUs.html` | Company |
+| `Customers.html` | Company |
+| `services_XPertRAG.html` | AI 賦能應用 |
+| `services_QilinAI.html` | AI 賦能應用 |
+| `services_OCR.html` | AI 賦能應用 |
+| `services_DominoClaw.html` | AI 賦能應用 |
+| `services_EIP.html` | 企業協同辦公 |
+| `services_BPM.html` | 企業協同辦公 |
+| `services_notesUpgrade.html` | HCL 專區 |
+| `hcl_voltmx.html` | HCL 專區 |
 
 ## Important Notes
 
 - **Never add `package.json`, `node_modules/`, or build tools** — this is a pure static site
 - **Never leave `.bak` or temporary files** in the repository
+- **All images must be WebP** — never add PNG files
 - All HTML pages must be valid, semantic HTML5 with proper `lang="zh-Hant"` attribute
 - Test dark/light theme toggle on every change
 - Mobile responsiveness is critical — test on both mobile and desktop views
+- When adding a new service page, update both the sitemap (with `lastmod` date) and the CLAUDE.md Image Assets table
