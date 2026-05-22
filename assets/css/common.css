@@ -134,3 +134,9 @@ table.bpm-table th, table.bpm-table td { border: 1px solid var(--outline-variant
 table.bpm-table th { background-color: var(--surface-container); font-weight: 700; color: var(--on-surface); font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
 table.bpm-table td { color: var(--on-surface-variant); }
 table.bpm-table tr:hover td { background-color: var(--surface-container-low); }
+
+#header { background-color: var(--header-bg); }
+#header-logo { padding-left: 12px; background-color: var(--logo-bg, #f8faff); }
+#header-logo img { filter: var(--logo-filter); }
+#header-logo h2 { margin-left: 20px; color: var(--logo-text, #0b1326); }
+#footer { background-color: transparent; }
