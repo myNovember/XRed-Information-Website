@@ -52,4 +52,16 @@ When adding a new page, copy the header/footer verbatim from an existing page. T
 
 ### URL Conventions
 
-Pages are named with a `PascalCase` prefix for company pages (`AboutUs.html`, `ContactUs.html`, `Customers.html`) and `snake_case` with a category prefix for service pages (`services_BPM.html`, `services_XPertRAG.html`, `hcl_voltmx.html`). The sitemap is maintained manually in `sitemap.xml`.
+Pages are named with a `PascalCase` prefix for company pages (`AboutUs.html`, `ContactUs.html`, `Customers.html`) and `snake_case` with a category prefix for service pages (`services_BPM.html`, `services_XPertRAG.html`, `services_DominoClaw.html`, `hcl_voltmx.html`). The sitemap is maintained manually in `sitemap.xml`.
+
+### Image Assets
+
+Service pages use category-prefixed folders (e.g., `assets/img/bpm/`, `assets/img/xpert-rag/`, `assets/img/dominoclaw/`). Company pages use `assets/img/about/`. Avoid creating duplicate directory structures — use the base `assets/img/<category>/` path consistently.
+
+## Important Notes
+
+- **Never add `package.json`, `node_modules/`, or build tools** — this is a pure static site
+- **Never leave `.bak` or temporary files** in the repository
+- All HTML pages must be valid, semantic HTML5 with proper `lang="zh-Hant"` attribute
+- Test dark/light theme toggle on every change
+- Mobile responsiveness is critical — test on both mobile and desktop views
