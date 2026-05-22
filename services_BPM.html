@@ -1,14 +1,21 @@
 ﻿<!DOCTYPE html>
-<html class="dark" lang="zh-TW">
+<html class="dark" lang="zh-Hant-TW">
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Xpower BPM 企業簽核 | 先宏資訊</title>
     <!-- SEO & Google Analytics -->
-    <meta name="keywords" content="Xpower BPM, 企業簽核, 電子簽核流程, 流程設計器, 動態路由, 簽核引擎, BPM 系統">
     <meta name="description"
           content="Xpower BPM 提供直覺的視覺化流程設計器與強大的動態路由功能。採用純 Vue.js 與 Python 打造的現代化電子簽核引擎，滿足各種高複雜度的企業內部簽核需求。">
     <link rel="icon" href="assets/img/xred-logo-icon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.xred.com.tw/services_BPM.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="先宏資訊">
+    <meta property="og:title" content="Xpower BPM 企業簽核 | 先宏資訊">
+    <meta property="og:description" content="Xpower BPM 提供直覺的視覺化流程設計器與強大的動態路由功能。採用純 Vue.js 與 Python 打造的現代化電子簽核引擎，滿足各種高複雜度的企業內部簽核需求。">
+    <meta property="og:url" content="https://www.xred.com.tw/services_BPM.html">
+    <meta property="og:image" content="https://www.xred.com.tw/assets/img/xred-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBKZG4REL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,14 +29,37 @@
     </script>
     <!-- SEO & Google Analytics -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;family=IBM+Plex+Mono:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;family=IBM+Plex+Mono:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <script src="assets/js/tailwind-config.js"></script>
     <link rel="stylesheet" href="assets/css/common.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Xpower BPM 企業簽核",
+      "description": "Xpower BPM 提供直覺的視覺化流程設計器與強大的動態路由功能。採用純 Vue.js 與 Python 打造的現代化電子簽核引擎，滿足各種高複雜度的企業內部簽核需求。",
+      "url": "https://www.xred.com.tw/services_BPM.html",
+      "serviceType": "Business Process Management",
+      "provider": {
+        "@id": "https://www.xred.com.tw/#organization"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁",    "item": "https://www.xred.com.tw/" },
+        { "@type": "ListItem", "position": 2, "name": "產品與服務", "item": "https://www.xred.com.tw/#services" },
+        { "@type": "ListItem", "position": 3, "name": "Xpower BPM 企業簽核", "item": "https://www.xred.com.tw/services_BPM.html" }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
 <header id="header" class="sticky top-0 z-50 w-full transition-colors duration-300">
@@ -37,7 +67,7 @@
         <div id="header-logo" class="pr-3 sm:pr-6 flex items-center justify-start border-b border-outline-variant">
             <a href="index.html" class="flex items-center">
                 <img alt="XRed Information" class="h-10 w-auto"
-                     src="assets/img/xred-logo.png" />
+                     src="assets/img/xred-logo.webp" width="405" height="151" />
                 <h2 class="text-2xl font-black tracking-tight hidden sm:block">先宏資訊</h2>
             </a>
         </div>
@@ -170,6 +200,13 @@
     </div>
 </header>
 <main class="layout-container border-x border-outline-variant">
+    <nav aria-label="breadcrumb" class="border-b border-outline-variant px-4 sm:px-6 py-2 text-xs font-mono flex items-center gap-2" style="color: var(--on-surface-variant);">
+        <a href="index.html" class="hover:text-primary transition-colors">首頁</a>
+        <span class="opacity-40">/</span>
+        <span>產品與服務</span>
+        <span class="opacity-40">/</span>
+        <span style="color: var(--primary);">Xpower BPM 企業簽核</span>
+    </nav>
     <section id="hero" class="border-b border-outline-variant relative overflow-hidden">
         <div class="absolute inset-0 pointer-events-none select-none opacity-[0.07]"
              style="background-image: linear-gradient(var(--on-background) 1px, transparent 1px), linear-gradient(90deg, var(--on-background) 1px, transparent 1px); background-size: 48px 48px;"></div>
@@ -357,8 +394,8 @@
                     </div>
                     <div
                         class="bg-surface-container-lowest p-6 border-t border-outline-variant pl-[0px] pr-[0px] pt-[0px] pb-[20px]">
-                        <img src="assets/img/bpm/xred_workflow_viewer.png"
-                             alt="Domino 版 BPM 流程檢視畫面 — 比價暨請購單簽核流程" class="w-full h-auto block" />
+                        <img src="assets/img/bpm/xred_workflow_viewer.webp"
+                             alt="Domino 版 BPM 流程檢視畫面 — 比價暨請購單簽核流程" class="w-full h-auto block" width="989" height="906" loading="lazy" />
                         <p class="text-on-surface-variant text-center italic pt-[0px] mt-[20px] text-[12px]">Domino 版
                             BPM 流程檢視與簽核追蹤</p>
                     </div>
@@ -447,16 +484,16 @@
             <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">平台核心功能</h2>
             <div class="mb-0">
                 <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
-                    <img src="assets/img/bpm/bpm_core_engine.jpg" alt="Xpower BPM 核心引擎視覺化"
-                         class="w-full h-auto block border border-outline-variant" />
+                    <img src="assets/img/bpm/bpm_core_engine.webp" alt="Xpower BPM 核心引擎視覺化"
+                         class="w-full h-auto block border border-outline-variant" width="1100" height="613" loading="lazy" />
                     <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
                         核心引擎：流程定義、動態路由、權限控管三大引擎協同運作</p>
                 </div>
             </div>
             <div class="mb-0">
                 <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
-                    <img src="assets/img/bpm/bpm_experience_upgrade.jpg" alt="Xpower BPM 體驗升級 — 三大功能"
-                         class="w-full h-auto block border border-outline-variant" />
+                    <img src="assets/img/bpm/bpm_experience_upgrade.webp" alt="Xpower BPM 體驗升級 — 三大功能"
+                         class="w-full h-auto block border border-outline-variant" width="1100" height="613" loading="lazy" />
                     <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
                         體驗升級：智慧表單、行動簽核、即時監控，全面提升簽核效率</p>
                 </div>
@@ -473,8 +510,8 @@
                     </p>
                 </div>
                 <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
-                    <img src="assets/img/bpm/bpm_workflow_designer.png" alt="Xpower BPM 流程設計器"
-                         class="w-full h-auto block border border-outline-variant" />
+                    <img src="assets/img/bpm/bpm_workflow_designer.webp" alt="Xpower BPM 流程設計器"
+                         class="w-full h-auto block border border-outline-variant" width="1572" height="851" loading="lazy" />
                     <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
                         圖形化流程設計器：出差申請單範例，包含條件閘道、多層主管簽核與子流程</p>
                 </div>
@@ -549,8 +586,8 @@
                         支援關卡進程主管審核、核決權限動態判斷、靈活退回機制。</p>
                 </div>
                 <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
-                    <img src="assets/img/bpm/bpm_dynamic_routing.png" alt="動態路由：智慧核決與退回機制概念圖"
-                         class="w-full h-auto block" />
+                    <img src="assets/img/bpm/bpm_dynamic_routing.webp" alt="動態路由：智慧核決與退回機制概念圖"
+                         class="w-full h-auto block" width="600" height="334" loading="lazy" />
                 </div>
             </div>
             <div class="mb-0">
@@ -578,8 +615,8 @@
                     </ul>
                 </div>
                 <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
-                    <img src="assets/img/bpm/bpm_form_view.png" alt="Xpower BPM 表單畫面"
-                         class="w-full h-auto block border border-outline-variant" />
+                    <img src="assets/img/bpm/bpm_form_view.webp" alt="Xpower BPM 表單畫面"
+                         class="w-full h-auto block border border-outline-variant" width="1524" height="1105" loading="lazy" />
                     <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
                         現代化表單介面：支援多 Section 分區、必填驗證、下拉選單、附件上傳等豐富元件</p>
                 </div>
@@ -630,8 +667,8 @@
                         <h4 class="text-lg font-black tracking-tight">即時看板</h4>
                     </div>
                     <div class="bg-surface-container-lowest p-6 pl-[0px] pr-[0px] pt-[0px] pb-[20px]">
-                        <img src="assets/img/bpm/bpm_dashboard.png" alt="Xpower BPM Dashboard 系統首頁"
-                             class="w-full h-auto block" />
+                        <img src="assets/img/bpm/bpm_dashboard.webp" alt="Xpower BPM Dashboard 系統首頁"
+                             class="w-full h-auto block" width="1585" height="876" loading="lazy" />
                         <p class="text-on-surface-variant text-center italic pt-[0px] mt-[20px] text-[12px]">
                             待簽核數、申請數、退回數一目了然，搭配系統公告與批次簽核</p>
                     </div>
@@ -643,8 +680,8 @@
                         <h4 class="text-lg font-black tracking-tight">簽核歷程追蹤</h4>
                     </div>
                     <div class="bg-surface-container-lowest p-6 pl-[0px] pr-[0px] pt-[0px] pb-[20px]">
-                        <img src="assets/img/bpm/bpm_workflow_history.png" alt="Xpower BPM 簽核歷程追蹤"
-                             class="w-full h-auto block" />
+                        <img src="assets/img/bpm/bpm_workflow_history.webp" alt="Xpower BPM 簽核歷程追蹤"
+                             class="w-full h-auto block" width="1792" height="446" loading="lazy" />
                         <p class="text-on-surface-variant text-center italic pt-[0px] mt-[20px] text-[12px]">
                             以四色節點即時呈現流程進度（已完成 / 目前關卡 / 待進行 / 駁回）</p>
                     </div>
@@ -662,8 +699,8 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-0 border border-outline-variant">
                 <div
                     class="md:col-span-5 bg-surface-container-lowest p-[0px] flex items-center justify-center border-b md:border-b-0 md:border-r border-outline-variant">
-                    <img src="assets/img/bpm/bpm_mobile_inbox.png" alt="Xpower BPM 手機版待簽核清單"
-                         class="w-full h-auto block" />
+                    <img src="assets/img/bpm/bpm_mobile_inbox.webp" alt="Xpower BPM 手機版待簽核清單"
+                         class="w-full h-auto block" width="603" height="832" loading="lazy" />
                 </div>
                 <div
                     class="md:col-span-7 p-8 md:p-5 bg-surface-container-low flex flex-col justify-center pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
