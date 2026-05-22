@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DominoClaw AI Agent | 先宏資訊</title>
+    <!-- SEO & Google Analytics -->
+    <meta name="keywords" content="DominoClaw, AI Agent, Domino 智慧代理, 對話式操作, Notes 系統整合, 工作自動化">
+    <meta name="description"
+          content="透過 DominoClaw AI Agent，員工只需使用自然語言對話，即可查詢信件、自動派發工作與調閱表單，大幅降低 HCL Notes/Domino 系統操作門檻，提升辦公效率。">
+    <link rel="icon" href="assets/img/xred-logo-icon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBKZG4REL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-SRBKZG4REL");
+    </script>
+    <!-- SEO & Google Analytics -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;family=IBM+Plex+Mono:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/assets/css/common.css" />
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<header id="header" class="sticky top-0 z-50 w-full transition-colors duration-300"
+        style="background-color: var(--header-bg);">
+    <nav class="layout-container flex justify-between items-stretch w-full h-[60px]">
+        <div id="header-logo" class="pr-3 sm:pr-6 flex items-center justify-start border-b border-outline-variant"
+             style="padding-left: 12px; background-color: var(--logo-bg, #f8faff);">
+            <a href="/" class="flex items-center">
+                <img alt="XRed Information" class="h-10 w-auto" style="filter: var(--logo-filter);"
+                     src="/assets/xred-logo.png" />
+                <h2 class="text-2xl font-black tracking-tight hidden sm:block"
+                    style="margin-left: 20px; color: var(--logo-text, #0b1326);">先宏資訊</h2>
+            </a>
+        </div>
+        <div class="flex-grow lg:hidden border-b border-outline-variant"
+             style="background-color: var(--logo-bg, #f8faff);"></div>
+        <div class="hidden lg:flex flex-grow items-stretch justify-end border-b border-outline-variant">
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/">[ 首頁 ]</a>
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/AboutUs.html">[ 關於先宏 ]</a>
+            <div class="relative group flex items-stretch border-r border-outline-variant">
+                <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
+                   style="color: var(--nav-text);" href="#">[ 產品與服務 ▾ ]</a>
+                <div
+                    class="hidden group-hover:block absolute top-full right-0 z-50 min-w-[280px] border border-outline-variant shadow-2xl"
+                    style="background-color: var(--header-bg);">
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// AI_賦能應用
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI
+                        知識助理</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// 企業協同辦公
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// HCL_原廠專區
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
+                       style="color: var(--nav-text);" href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+                </div>
+            </div>
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/Customers.html">[ 客戶實例 ]</a>
+            <div class="relative group flex items-stretch border-r border-outline-variant">
+                <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
+                   style="color: var(--nav-text);" href="#">[ 資源中心 ▾ ]</a>
+                <div
+                    class="hidden group-hover:block absolute top-full right-0 z-50 min-w-[240px] border border-outline-variant shadow-2xl"
+                    style="background-color: var(--header-bg);">
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-active);" href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt;
+                        Resource Hub ↗</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
+                       style="color: var(--nav-active);" href="https://www.xred.com.tw:8000/ChatBotV2.html"
+                       target="_blank">&gt; X-Pert AI 體驗 ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-stretch">
+            <a href="/ContactUs.html"
+               class="px-8 border-l border-b border-outline-variant bg-primary text-on-primary font-bold uppercase tracking-tighter transition-all text-sm contact-btn hidden sm:flex items-center">
+                CONTACT_US.EXE
+            </a>
+            <button id="mobile-menu-btn"
+                    class="lg:hidden px-5 border-l border-b border-outline-variant flex items-center transition-all"
+                    style="color: var(--nav-text);" aria-label="選單"
+                    onclick="var m=document.getElementById('mobile-menu'); m.classList.toggle('hidden'); var i=document.getElementById('mobile-menu-icon'); i.textContent = m.classList.contains('hidden')?'menu':'close';">
+                <span class="material-symbols-outlined text-2xl" id="mobile-menu-icon">menu</span>
+            </button>
+            <button id="theme-toggle"
+                    class="px-6 border-l border-b border-outline-variant flex items-center transition-all"
+                    style="color: var(--nav-text);" title="切換主題">
+                <span class="material-symbols-outlined text-xl" id="theme-icon">dark_mode</span>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+         class="hidden lg:hidden border-t border-outline-variant max-h-[calc(100vh-60px)] overflow-y-auto"
+         style="background-color: var(--header-bg);">
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/">[ 首頁 ]</a>
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/AboutUs.html">[ 關於先宏 ]</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// AI_賦能應用
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI 知識助理</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// 企業協同辦公
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// HCL_原廠專區
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/Customers.html">[ 客戶實例 ]</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// 資源中心
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
+           href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt; Resource Hub ↗</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
+           href="https://www.xred.com.tw:8000/ChatBotV2.html" target="_blank">&gt; X-Pert AI 體驗 ↗</a>
+        <a href="/ContactUs.html"
+           class="block px-6 py-4 bg-primary text-on-primary font-bold uppercase tracking-tighter text-sm text-center">CONTACT_US.EXE</a>
+    </div>
+</header>
+<main class="layout-container border-x border-outline-variant">
+    <section id="hero" class="border-b border-outline-variant relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none select-none opacity-[0.07]"
+             style="background-image: linear-gradient(var(--on-background) 1px, transparent 1px), linear-gradient(90deg, var(--on-background) 1px, transparent 1px); background-size: 48px 48px;"></div>
+        <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 pointer-events-none select-none opacity-[0.06]">
+            <span class="material-symbols-outlined text-primary"
+                  style="font-size: 480px; line-height: 1;">query_stats</span>
+        </div>
+        <div class="absolute right-6 bottom-4 pointer-events-none select-none opacity-30 hidden md:block">
+<pre class="text-[10px] font-mono text-primary leading-[1.2] text-right">// XRED://CLAW_ENGINE
+// scan: DEEP    │ targets: NSF    │ depth: FULL</pre>
+        </div>
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-8 block font-bold font-mono">// DOMINO_AI_AGENT</span>
+            <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter mb-12">
+                <span class="text-primary">DominoClaw</span> — Domino 專屬的 AI Agent
+            </h1>
+            <p class="text-on-surface-variant max-w-4xl font-medium text-[16px]">
+                用說的，一句話就能操作 <span class="text-primary">Domino</span>。不用記指令、不用切畫面，用平常講話的方式完成查詢與作業。
+            </p>
+        </div>
+    </section>
+    <section id="use-cases" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16 pb-[0px] md:pb-[64px]">
+            <span
+                class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// USE_CASES</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">看看它能幫員工做什麼</h2>
+            <p class="text-on-surface-variant max-w-3xl mb-[20px] md:mb-0 text-[14px]">這些原本要打開
+                Notes、翻好幾個畫面才完成的事，現在問一句就好。</p>
+        </div>
+        <div class="border-t border-b border-outline-variant">
+            <div
+                class="p-6 md:p-8 border-b border-outline-variant bg-surface-container-low pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                <span
+                    class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// CHAT_UI</span>
+                <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight">對話介面示意</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl">員工只要問「本週有誰請假」，AI
+                    立刻回傳結構化表格，直接附上「查看文件」連結。</p>
+            </div>
+            <div class="bg-surface-container-lowest leading-[0]">
+                <img src="/assets/img/dominoclaw/claw1.png" alt="DominoClaw 對話介面示意圖"
+                     class="w-full h-auto block" />
+            </div>
+        </div>
+        <div class="p-5 md:p-16 pt-[20px] md:pt-[64px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">mail</span><span>「最近一週有什麼信？」</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">不用打開 Notes 一封封翻——AI
+                        主動整理本週信件清單，重要訊息一眼看到。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">send</span><span>「寄封信給 Coco，說進度沒問題」</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        自動找到收件人、自動寄出，並回傳查看連結讓您確認，省去切換郵件介面的時間。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">savings</span><span>「維護合約預算還剩多少？」</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">AI 直接從 Domino
+                        資料庫中撈出數字並整理，不用再請同事幫忙查找。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">event_busy</span><span>「本週有誰請假？」</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">主管最常問的問題，AI
+                        秒回表格：人員、假別、狀態一目瞭然。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="why-stable" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16 pb-[0px] md:pb-[64px]">
+            <span
+                class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// WHY_RELIABLE</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">為什麼 <span
+                class="text-primary">DominoClaw</span> 又準又穩</h2>
+            <p class="text-on-surface-variant max-w-3xl mb-[20px] md:mb-0 text-[14px]">我們不是把 AI
+                套在表面，而是在底層重新設計它的「思考方式」，讓它在企業環境裡真的能用、能信任。</p>
+        </div>
+        <div class="border-t border-b border-outline-variant">
+            <div
+                class="p-6 md:p-8 border-b border-outline-variant bg-surface-container-low pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// EXECUTION_TRACE</span>
+                <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight">執行紀錄追溯</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl">每一次回答，AI
+                    用了哪些技能、花了多少毫秒，全程可視化呈現，企業稽核有依據。</p>
+            </div>
+            <div class="bg-surface-container-lowest leading-[0]">
+                <img src="/assets/img/dominoclaw/claw2.png" alt="DominoClaw 執行紀錄追溯" class="w-full h-auto block" />
+            </div>
+        </div>
+        <div class="p-5 md:p-16 pt-[20px] md:pt-[64px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">psychology</span>說什麼就懂什麼
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">AI
+                        不靠死板的關鍵字比對，而是理解您真正的意思，再選擇對應的執行方式。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">account_tree</span>複雜任務自動分工
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">需要跨多個步驟的任務，AI
+                        會自動規劃並逐步完成，不是寫死的流程，而是即時思考的工作鏈。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">memory</span>越聊越穩，不會變笨
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        內建智慧記憶機制，最近對話完整保留、舊資訊適度精簡——速度與品質長時間都穩定。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">visibility</span>每一步都看得到
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        每次回答都附帶執行紀錄——用了哪個能力、查了哪個資料、花了多少時間，全程可追溯。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="security" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// ENTERPRISE_SAFETY</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">讓 <span class="text-primary">AI</span>
+                安全地在企業裡工作</h2>
+            <p class="text-on-surface-variant max-w-3xl mb-[20px] md:mb-10 text-[14px]"><span
+                class="text-primary">AI</span> 帶來的不只是效率，也帶來新的安全議題。<span
+                class="text-primary">DominoClaw</span> 從一開始就把企業安控放在第一位。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">admin_panel_settings</span><span>存取邊界由 IT 決定</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">AI
+                        能碰哪些資料庫，由管理員集中設定。改一個設定就能即時調整權限，不用動程式碼。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">groups</span><span>不同角色看到不同功能</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        功能分為公司通用、部門專屬、個人自訂三層——各自獨立，員工不會誤觸不屬於自己的功能。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="upcoming" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span
+                class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// COMING_SOON</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">即將推出：<span class="text-primary">Chrome 側邊欄模式</span>
+            </h2>
+            <div
+                class="border-l-4 border-primary p-6 bg-surface-container-low mb-0 max-w-4xl pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                <p class="text-base leading-relaxed"><span
+                    class="font-black">開著 Domino 表單，旁邊就能跟 AI 對話。</span>不用切畫面、不用複製貼上，工作流程更順暢。
+                </p>
+            </div>
+        </div>
+        <div class="border-t border-b border-outline-variant">
+            <div class="bg-surface-container-lowest leading-[0]">
+                <img src="/assets/img/dominoclaw/claw3.png" alt="Chrome 側邊欄模式示意圖" class="w-full h-auto block" />
+            </div>
+        </div>
+    </section>
+    <section id="cta" class="border-b border-outline-variant bg-primary">
+        <div class="p-5 md:p-16">
+            <h2 class="text-on-primary text-4xl md:text-5xl font-black mb-6 tracking-tighter">想為您的 Domino 加上 AI
+                Agent？</h2>
+            <p class="text-on-primary font-medium mb-10 max-w-2xl text-[14px]">每家企業的 Domino
+                應用都不一樣——讓我們先聊聊您的使用情境，再幫您規劃最適合的導入方式。</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/ContactUs.html"
+                   class="bg-on-primary text-primary px-8 py-5 font-bold text-lg tracking-tighter hover:bg-background hover:text-on-background transition-all flex items-center justify-center gap-3 border border-on-primary">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    聯絡諮詢
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="footer" class="transition-colors duration-300" style="background-color: transparent;">
+    <div class="layout-container brutalist-grid border-none">
+        <div id="footer-info" class="col-span-full lg:col-span-4 grid-block !border-none">
+            <div class="mb-6"><span class="text-sm tracking-tight leading-relaxed font-medium"
+                                    style="color: var(--footer-text);">先宏資訊股份有限公司</span></div>
+            <p class="tracking-tight max-w-xs font-medium text-[12px]" style="color: var(--footer-text);">
+                從 Notes 維護到 AI 原生與企業轉型領航者。我們讓沉睡的企業知識庫活起來，為您的數位轉型打造最務實的升級路徑。
+            </p>
+            <p class="tracking-tight font-medium text-[12px] mt-3 flex items-start gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;margin-top:1px;">location_on</span>10694
+                台北市大安區忠孝東路四段 270 號 17 樓（近捷運國父紀念館站）</p>
+            <p class="tracking-tight font-medium text-[12px] mt-1 flex items-center gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;">call</span><a href="tel:+886277252968"
+                                                                                              class="hover:text-primary">+886-2-7725-2968</a>
+            </p>
+            <p class="tracking-tight font-medium text-[12px] mt-1 flex items-center gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;">mail</span><a
+                href="mailto:hello@xred.com.tw" class="hover:text-primary">hello@xred.com.tw</a></p>
+        </div>
+        <div
+            class="col-span-full sm:col-span-4 lg:col-span-3 lg:col-start-10 grid-block !border-none flex flex-col items-end text-right">
+            <div class="flex gap-4">
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="YouTube" title="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="Facebook" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                    </svg>
+                </a>
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="LinkedIn" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="text-[10px] font-bold tracking-widest font-mono mt-3" style="color: var(--footer-copyright);">
+                © 2026 XRed Information
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/assets/js/theme-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Segoe UI, Noto Sans TC, sans-serif">
+  <defs>
+    <linearGradient id="dg1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="dg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient>
+    <linearGradient id="dg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+    
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e3a8a">Volt MX Go — Domino 應用現代化流程</text>
+
+  
+  <rect x="20" y="60" width="200" height="160" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="20" y="60" width="200" height="40" rx="12" fill="url(#dg1)"/>
+  <rect x="20" y="88" width="200" height="12" fill="url(#dg1)"/>
+  <text x="120" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">既有 Domino 應用</text>
+  <text x="120" y="125" text-anchor="middle" font-size="12" fill="#475569">📋 表單 (Forms)</text>
+  <text x="120" y="148" text-anchor="middle" font-size="12" fill="#475569">📊 檢視 (Views)</text>
+  <text x="120" y="171" text-anchor="middle" font-size="12" fill="#475569">⚙️ 代理 (Agents)</text>
+  <text x="120" y="194" text-anchor="middle" font-size="12" fill="#475569">📝 @Formula 邏輯</text>
+
+  
+  <line x1="225" y1="140" x2="275" y2="140" stroke="#94a3b8" stroke-width="2"/>
+  <defs/>
+  <text x="250" y="132" text-anchor="middle" font-size="10" fill="#64748b">REST API</text>
+
+  
+  <rect x="280" y="50" width="260" height="180" rx="12" fill="#fff" stroke="#14b8a6" stroke-width="2"/>
+  <rect x="280" y="50" width="260" height="40" rx="12" fill="url(#dg2)"/>
+  <rect x="280" y="78" width="260" height="12" fill="url(#dg2)"/>
+  <text x="410" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">Volt MX Go 轉換引擎</text>
+
+  <text x="300" y="115" font-size="12" fill="#0f766e" font-weight="600">🔄 Design Import</text>
+  <text x="310" y="133" font-size="11" fill="#475569">自動讀取 Domino 設計元素</text>
+  <text x="300" y="157" font-size="12" fill="#0f766e" font-weight="600">🔁 VoltFormula</text>
+  <text x="310" y="175" font-size="11" fill="#475569">@Formula → JavaScript 自動轉換</text>
+  <text x="300" y="199" font-size="12" fill="#0f766e" font-weight="600">⚡ 自動化 60% 改建工程</text>
+
+  
+  <line x1="545" y1="140" x2="595" y2="140" stroke="#94a3b8" stroke-width="2"/>
+  <text x="570" y="132" text-anchor="middle" font-size="10" fill="#64748b">建置</text>
+
+  
+  <rect x="600" y="50" width="280" height="180" rx="12" fill="#fff" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="600" y="50" width="280" height="40" rx="12" fill="url(#dg3)"/>
+  <rect x="600" y="78" width="280" height="12" fill="url(#dg3)"/>
+  <text x="740" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">多體驗應用輸出</text>
+
+  <text x="740" y="115" text-anchor="middle" font-size="12" fill="#475569">📱 iOS / Android 原生 App</text>
+  <text x="740" y="140" text-anchor="middle" font-size="12" fill="#475569">🌐 Responsive Web App</text>
+  <text x="740" y="165" text-anchor="middle" font-size="12" fill="#475569">📟 平板 / Kiosk 應用</text>
+  <text x="740" y="190" text-anchor="middle" font-size="12" fill="#475569">⌚ 穿戴裝置 App</text>
+
+  
+  <rect x="20" y="260" width="860" height="80" rx="10" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="450" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#166534">Volt MX Go 帶來的效益</text>
+  <text x="150" y="318" text-anchor="middle" font-size="12" fill="#15803d">✅ 保留既有 Domino 資料</text>
+  <text x="375" y="318" text-anchor="middle" font-size="12" fill="#15803d">✅ 無需重寫商業邏輯</text>
+  <text x="600" y="318" text-anchor="middle" font-size="12" fill="#15803d">✅ 縮短 60% 上線時間</text>
+  <text x="800" y="318" text-anchor="middle" font-size="12" fill="#15803d">✅ 一次開發多端部署</text>
+
+  <text x="450" y="355" text-anchor="middle" font-size="11" fill="#94a3b8">資料來源：HCL Software — Volt MX Go Documentation</text>
+</svg>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>X-Pert RAG 企業專屬 AI 知識庫助理 | 先宏資訊</title>
+    <!-- SEO & Google Analytics -->
+    <meta name="keywords"
+          content="X-Pert RAG, 企業 AI 知識庫, Domino 整合, AI 問答系統, RAG 架構, 大型語言模型, 企業內部 AI">
+    <meta name="description"
+          content="專為 HCL Notes/Domino 打造的 X-Pert RAG 企業知識庫助理。支援複雜權限架構，不需重新轉檔即可讓歷史資料支援大型語言模型 (LLM) 智慧問答，確保機敏資料安全。">
+    <link rel="icon" href="assets/img/xred-logo-icon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBKZG4REL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-SRBKZG4REL");
+    </script>
+    <!-- SEO & Google Analytics -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;family=IBM+Plex+Mono:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/assets/css/common.css" />
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<header id="header" class="sticky top-0 z-50 w-full transition-colors duration-300"
+        style="background-color: var(--header-bg);">
+    <nav class="layout-container flex justify-between items-stretch w-full h-[60px]">
+        <div id="header-logo" class="pr-3 sm:pr-6 flex items-center justify-start border-b border-outline-variant"
+             style="padding-left: 12px; background-color: var(--logo-bg, #f8faff);">
+            <a href="/" class="flex items-center">
+                <img alt="XRed Information" class="h-10 w-auto" style="filter: var(--logo-filter);"
+                     src="/assets/xred-logo.png" />
+                <h2 class="text-2xl font-black tracking-tight hidden sm:block"
+                    style="margin-left: 20px; color: var(--logo-text, #0b1326);">先宏資訊</h2>
+            </a>
+        </div>
+        <div class="flex-grow lg:hidden border-b border-outline-variant"
+             style="background-color: var(--logo-bg, #f8faff);"></div>
+        <div class="hidden lg:flex flex-grow items-stretch justify-end border-b border-outline-variant">
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/">[ 首頁 ]</a>
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/AboutUs.html">[ 關於先宏 ]</a>
+            <div class="relative group flex items-stretch border-r border-outline-variant">
+                <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
+                   style="color: var(--nav-text);" href="#">[ 產品與服務 ▾ ]</a>
+                <div
+                    class="hidden group-hover:block absolute top-full right-0 z-50 min-w-[280px] border border-outline-variant shadow-2xl"
+                    style="background-color: var(--header-bg);">
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// AI_賦能應用
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI
+                        知識助理</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// 企業協同辦公
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// HCL_原廠專區
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
+                       style="color: var(--nav-text);" href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+                </div>
+            </div>
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/Customers.html">[ 客戶實例 ]</a>
+            <div class="relative group flex items-stretch border-r border-outline-variant">
+                <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
+                   style="color: var(--nav-text);" href="#">[ 資源中心 ▾ ]</a>
+                <div
+                    class="hidden group-hover:block absolute top-full right-0 z-50 min-w-[240px] border border-outline-variant shadow-2xl"
+                    style="background-color: var(--header-bg);">
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-active);" href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt;
+                        Resource Hub ↗</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
+                       style="color: var(--nav-active);" href="https://www.xred.com.tw:8000/ChatBotV2.html"
+                       target="_blank">&gt; X-Pert AI 體驗 ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-stretch">
+            <a href="/ContactUs.html"
+               class="px-8 border-l border-b border-outline-variant bg-primary text-on-primary font-bold uppercase tracking-tighter transition-all text-sm contact-btn hidden sm:flex items-center">
+                CONTACT_US.EXE
+            </a>
+            <button id="mobile-menu-btn"
+                    class="lg:hidden px-5 border-l border-b border-outline-variant flex items-center transition-all"
+                    style="color: var(--nav-text);" aria-label="選單"
+                    onclick="var m=document.getElementById('mobile-menu'); m.classList.toggle('hidden'); var i=document.getElementById('mobile-menu-icon'); i.textContent = m.classList.contains('hidden')?'menu':'close';">
+                <span class="material-symbols-outlined text-2xl" id="mobile-menu-icon">menu</span>
+            </button>
+            <button id="theme-toggle"
+                    class="px-6 border-l border-b border-outline-variant flex items-center transition-all"
+                    style="color: var(--nav-text);" title="切換主題">
+                <span class="material-symbols-outlined text-xl" id="theme-icon">dark_mode</span>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+         class="hidden lg:hidden border-t border-outline-variant max-h-[calc(100vh-60px)] overflow-y-auto"
+         style="background-color: var(--header-bg);">
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/">[ 首頁 ]</a>
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/AboutUs.html">[ 關於先宏 ]</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// AI_賦能應用
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI 知識助理</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// 企業協同辦公
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// HCL_原廠專區
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/Customers.html">[ 客戶實例 ]</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// 資源中心
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
+           href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt; Resource Hub ↗</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
+           href="https://www.xred.com.tw:8000/ChatBotV2.html" target="_blank">&gt; X-Pert AI 體驗 ↗</a>
+        <a href="/ContactUs.html"
+           class="block px-6 py-4 bg-primary text-on-primary font-bold uppercase tracking-tighter text-sm text-center">CONTACT_US.EXE</a>
+    </div>
+</header>
+<main class="layout-container border-x border-outline-variant">
+    <section id="hero" class="border-b border-outline-variant relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none select-none opacity-[0.07]"
+             style="background-image: linear-gradient(var(--on-background) 1px, transparent 1px), linear-gradient(90deg, var(--on-background) 1px, transparent 1px); background-size: 48px 48px;"></div>
+        <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 pointer-events-none select-none opacity-[0.06]">
+            <span class="material-symbols-outlined text-primary"
+                  style="font-size: 480px; line-height: 1;">psychology</span>
+        </div>
+        <div class="absolute right-6 bottom-4 pointer-events-none select-none opacity-30 hidden md:block">
+<pre class="text-[10px] font-mono text-primary leading-[1.2] text-right">// XRED://RAG_NEURAL
+// model: LLM    │ index: VECTOR   │ recall: 0.94</pre>
+        </div>
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-8 block font-bold font-mono">// ENTERPRISE_RAG_ENGINE</span>
+            <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter mb-12">
+                <span class="text-primary">X-Pert RAG</span><br />— 企業專屬 <span class="text-primary">AI</span> 知識庫助理
+            </h1>
+            <p class="text-on-surface-variant max-w-4xl font-medium text-[16px]">
+                專為 HCL Notes 打造：無縫支援向量轉換，歷史資料立即變身 AI 顧問。
+            </p>
+        </div>
+    </section>
+    <section id="intro" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// INTRO</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">告別手動撈資料！讓您的 <span
+                class="text-primary">Domino</span> 知識庫「活」起來</h2>
+            <p class="text-on-surface-variant max-w-3xl text-[14px]">無論是各式各樣的 Notes 知識庫，或是最早期傳統的「文件庫」應用，都能透過最前端的
+                RAG 技術與直覺對話介面，讓沉睡的歷史資料即問即答，實現知識調用 100% 全自動化。</p>
+        </div>
+    </section>
+    <section id="pain-points" class="border-b border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+            <div
+                class="md:col-span-4 p-5 border-b md:border-b-0 md:border-r border-outline-variant bg-surface-container-highest">
+                <span class="material-symbols-outlined text-5xl text-error mb-6" data-weight="fill">warning</span>
+                <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// PAIN_POINTS</span>
+                <h2 class="text-3xl font-black mb-4 tracking-tight">痛點情境：為傳統 <span
+                    class="text-primary">Domino</span> 系統無痛導入 <span class="text-primary">AI</span></h2>
+                <p class="text-on-surface-variant text-sm leading-relaxed">過去，當團隊想為 Notes Client 內的既有知識庫導入
+                    AI 時，總是面臨巨大的門檻：</p>
+            </div>
+            <div class="md:col-span-8 p-5">
+                <div class="space-y-8">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-3xl text-error shrink-0">close</span>
+                        <div>
+                            <h3 class="text-xl font-black mb-2">無法割捨的 RichText</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Notes 裡存放了大量 RichText
+                                格式的歷史文件與圖文，傳統 AI 難以直接解析。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-3xl text-error shrink-0">close</span>
+                        <div>
+                            <h3 class="text-xl font-black mb-2">資料重工的高昂成本</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">為了做 AI 知識庫，往往被迫要把
+                                Domino 的資料全部人工匯出或轉檔，曠日廢時且容易遺失細節。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-3xl text-error shrink-0">close</span>
+                        <div>
+                            <h3 class="text-xl font-black mb-2">跨平台搜尋困難</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">
+                                知識散落在不同的資料庫與系統，新進員工得反覆切換系統才能拼湊出完整答案。</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-10 p-6 bg-primary/10 border border-primary/30 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <p class="text-primary font-bold text-lg">現在，有了 X-Pert RAG，保障現有 Domino 投資，無痛升級現有
+                        Notes 應用！</p>
+                    <p class="text-on-surface-variant text-sm mt-2">完全「無需轉檔、無縫銜接」，我們透過獨家技術直接讓
+                        Domino 系統內的知識庫「活」起來。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="border-b border-outline-variant">
+        <div class="p-[20px]">
+            <img src="/assets/img/xpert-rag/notes_client_original.png" alt="Notes Client 原始文件"
+                 class="w-full border border-outline-variant" />
+            <p class="text-on-surface-variant font-mono text-center text-[12px] mt-[0px] pt-[20px] pb-[0px]">無縫升級！即使是
+                Notes Client 內充滿歷史痕跡的 RichText 文件，也能成為 AI 最強的知識後盾。</p>
+        </div>
+    </section>
+    <section id="core-features" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-6 block font-bold font-mono">// CORE_FEATURES</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">核心功能與成果展示</h2>
+        </div>
+        <div class="border-t border-outline-variant p-[20px]">
+            <img src="/assets/img/xpert-rag/rag_core_dataflow.png" alt="X-Pert RAG 核心資料流程圖"
+                 class="w-full border border-outline-variant" />
+            <p class="text-on-surface-variant p-4 font-mono text-center border-b-[0px] text-[12px] pl-[0px] pr-[0px] pt-[20px] pb-[0px]">
+                X-Pert RAG 核心資料流：從 HCL Notes 動態同步，經預處理引擎寫入 Qdrant 向量庫，再由 LLM
+                彙整生成精準回答，並附上溯源連結回到原始文件。</p>
+        </div>
+    </section>
+    <section class="border-b border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-2 border-outline-variant">
+            <div class="md:border-r border-outline-variant p-[20px] border-b">
+                <img src="/assets/img/xpert-rag/notes_web_answer.png" alt="Notes Web 智能回答"
+                     class="w-full border border-outline-variant" />
+            </div>
+            <div class="p-[20px] border-b border-outline-variant">
+                <img src="/assets/img/xpert-rag/web_ui_display.png" alt="X-Pert Web UI"
+                     class="w-full border border-outline-variant" />
+            </div>
+        </div>
+        <div class="p-5 border-b border-outline-variant pl-[0px] pr-[0px] pt-[0px] pb-[0px] text-center">
+            <p class="text-on-surface-variant pb-[20px] pt-[20px] text-[12px]"><span
+                class="font-bold text-on-background">統整解答與溯源雙管齊下！</span>X-Pert Web
+                前台不僅能直接為您統整出精準解答，更提供可點擊的來源連結，一鍵跳轉回原始 Notes 系統查看文件全文。</p>
+        </div>
+    </section>
+    <section id="feature-1" class="border-b border-outline-variant bg-surface-container-low">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-5 p-5 border-b md:border-b-0 md:border-r border-outline-variant">
+                <div class="flex items-center gap-3 mb-6">
+                    <span
+                        class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-black text-lg"
+                        style="border-radius: 50% !important;">01</span>
+                    <span
+                        class="text-xs font-bold font-mono text-primary tracking-widest uppercase">SMART_DIALOGUE</span>
+                </div>
+                <h3 class="text-2xl font-black mb-4 tracking-tight">即問即答的「智慧對話」體驗 (智能前台)</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                    告別傳統的搜尋框！我們提供極致流暢的對話介面：</p>
+                <ul class="space-y-4">
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary shrink-0">stream</span>
+                        <div>
+                            <span class="font-bold text-sm">串流生成回覆</span>
+                            <p class="text-on-surface-variant mt-1 text-[14px]">思考過程即時呈現，不需乾等。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary shrink-0">psychology</span>
+                        <div>
+                            <span class="font-bold text-sm">前後文記憶</span>
+                            <p class="text-on-surface-variant mt-1 text-[14px]">支援多輪對話，AI
+                                記得你剛剛問過什麼，溝通更自然。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary shrink-0">image_search</span>
+                        <div>
+                            <span class="font-bold text-sm">多圖預覽與多模態分析</span>
+                            <p class="text-on-surface-variant mt-1 text-[14px]">
+                                直接截圖貼上網頁，不僅能讀字、還能讀圖。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:col-span-7 p-[20px]">
+                <img src="/assets/img/xpert-rag/feature_multimodal.png" alt="多圖預覽與多模態分析"
+                     class="w-full h-full object-cover border border-outline-variant" />
+            </div>
+        </div>
+    </section>
+    <section id="feature-2" class="border-b border-outline-variant bg-surface-container-low">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-7 p-[20px] order-2 md:order-1">
+                <img src="/assets/img/xpert-rag/rag_result_demo.png" alt="精準檢索成果"
+                     class="w-full h-full object-cover border border-outline-variant" />
+            </div>
+            <div class="md:col-span-5 p-5 border-b md:border-b-0 md:border-l border-outline-variant order-1 md:order-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <span
+                        class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-black text-lg"
+                        style="border-radius: 50% !important;">02</span>
+                    <span class="text-xs font-bold font-mono text-primary tracking-widest uppercase">RAG_ENGINE</span>
+                </div>
+                <h3 class="text-2xl font-black mb-4 tracking-tight">專為 <span class="text-primary">Domino</span>
+                    打造的「高命中率檢索大腦」</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-6">透過專為 Notes 生態量身打造的 RAG
+                    引擎，不僅回答「有本有據」，更在準確度上達成卓越表現：</p>
+                <div class="space-y-4 mb-6">
+                    <div class="p-4 bg-surface-container border border-outline-variant">
+                        <div class="flex items-center justify-between mb-2">
+                            <span
+                                class="text-xs font-bold font-mono text-on-surface-variant">雲端大模型 (Cloud LLM)</span>
+                            <span class="text-primary text-2xl font-black font-mono">95.5%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest h-2">
+                            <div class="bg-primary h-2" style="width: 95.5%"></div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-surface-container border border-outline-variant">
+                        <div class="flex items-center justify-between mb-2">
+                            <span
+                                class="text-xs font-bold font-mono text-on-surface-variant">地端大模型 (Local LLM)</span>
+                            <span class="text-primary text-2xl font-black font-mono">85%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest h-2">
+                            <div class="bg-primary h-2" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="space-y-4 text-sm text-on-surface-variant">
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">check</span>
+                        <div><span class="font-bold text-on-background">零轉檔庫內直讀</span>
+                            <p class="mt-1 text-[14px]">直接無縫接軌 Notes 上的各式歷史資料庫與複雜的 RichText
+                                內容，不用經歷資料重工與轉檔工程。</p></div>
+                    </li>
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">check</span>
+                        <div><span class="font-bold text-on-background">高命中率的核心檢索引擎</span>
+                            <p class="mt-1 text-[14px]">在內部核心場景驗證 (PoC Benchmark) 中，搭配雲端大模型可達 95.5%
+                                準確率；地端大模型亦具備 85% 的高水準。</p></div>
+                    </li>
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">check</span>
+                        <div><span class="font-bold text-on-background">精準同步 Notes「新增 / 修改 / 作廢」狀態</span>
+                            <p class="mt-1 text-[14px]">當文件發生變動或被註記作廢時，系統將即時連動並更新後端的 Qdrant
+                                向量資料庫——確保 AI 永遠只依據最新、最有效的資料回答。</p></div>
+                    </li>
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary shrink-0">check</span>
+                        <div><span class="font-bold text-on-background">現代化閱讀體驗</span>
+                            <p class="mt-1 text-[14px]">
+                                回覆內容以乾淨表格、圖文連結與清晰格式呈現，大幅提升資訊吸收效率。</p></div>
+                    </li>
+                </ul>
+                <div class="mt-6 p-4 border-l-4 border-primary bg-surface-container">
+                    <p class="text-sm leading-relaxed"><span class="font-bold">為企業海量資料量身調校</span>：X-Pert
+                        專業團隊會依據貴公司的資料量級與文件屬性，提供專屬的 RAG 檢索參數與文本切片 (Chunking)
+                        調校服務，確保系統在海量資料中仍能維持最穩定可靠的回覆品質！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="feature-3" class="border-b border-outline-variant bg-surface-container-low">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-5 p-5 border-b md:border-b-0 md:border-r border-outline-variant">
+                <div class="flex items-center gap-3 mb-6">
+                    <span
+                        class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-black text-lg"
+                        style="border-radius: 50% !important;">03</span>
+                    <span
+                        class="text-xs font-bold font-mono text-primary tracking-widest uppercase">SMART_CHATBOT</span>
+                </div>
+                <h3 class="text-2xl font-black mb-4 tracking-tight">兼具知識引導與「業務破冰」的智慧客服大腦</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-6">系統不僅被動回答，更能主動引導使用者：</p>
+                <ul class="space-y-4">
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary shrink-0">touch_app</span>
+                        <div>
+                            <span class="font-bold text-sm">AI 智慧選項引導</span>
+                            <p class="text-on-surface-variant mt-1 text-[14px]">系統會自動為使用者推薦 6
+                                個最可能想問的快速按鈕，包含技術與服務的提問引導，還能將「請幫我聯絡業務／預約展示」無縫安插在選項中。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary shrink-0">person_search</span>
+                        <div>
+                            <span class="font-bold text-sm">個人化興趣分析</span>
+                            <p class="text-on-surface-variant mt-1 text-[14px]">
+                                從對話中自動抽取使用者的興趣標籤，讓每一次互動都越來越懂你！</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:col-span-7 p-[20px]">
+                <img src="/assets/img/xpert-rag/rag_smart_chatbot.png" alt="智慧客服引導介面"
+                     class="w-full h-full object-cover border border-outline-variant" />
+            </div>
+        </div>
+    </section>
+    <section id="use-case" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span
+                class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// USE_CASE</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">應用場景：主管智能幫手 — AI 自動週報</h2>
+            <p class="text-on-surface-variant max-w-3xl text-[14px] mb-8">結合 X-Pert RAG 的知識檢索能力與 AI
+                摘要技術，可自動彙整每週關鍵資訊，生成主管層級的智能週報。系統會從 Domino 資料庫、EIP
+                待辦與簽核歷程中，自動擷取重要事件並產出結構化摘要，讓主管不必再花時間逐一翻閱。</p>
+            <div class="border border-outline-variant">
+                <img src="/assets/img/xpert-rag/ai_weekly_report.jpg" alt="AI 自動週報系統介面 — 主管智能幫手"
+                     class="w-full h-auto block" />
+            </div>
+        </div>
+    </section>
+    <section id="demo" class="border-b border-outline-variant bg-primary">
+        <div class="p-5 md:p-16">
+            <h2 class="text-on-primary text-4xl md:text-5xl font-black mb-6 tracking-tighter">立即線上體驗 X-Pert RAG
+                的威力！</h2>
+            <p class="text-on-primary font-medium mb-10 max-w-2xl text-[14px]">
+                百聞不如一見！我們特別開放了公開的實機體驗環境，讓您親手感受系統的檢索速度與完美解析。</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://www.xred.com.tw/hub.nsf/home" target="_blank"
+                   class="bg-on-primary text-primary px-8 py-5 font-bold text-lg tracking-tighter hover:bg-background hover:text-on-background transition-all flex items-center justify-center gap-3 border border-on-primary">
+                    <span class="material-symbols-outlined">language</span>
+                    前往技術展示網站
+                </a>
+                <a href="https://www.xred.com.tw:8000/ChatBotV2.html" target="_blank"
+                   class="border border-on-primary text-on-primary px-8 py-5 font-bold text-lg tracking-tighter hover:bg-on-primary hover:text-primary transition-all flex items-center justify-center gap-3">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    立即與 X-Pert AI 助理對話
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="footer" class="transition-colors duration-300" style="background-color: transparent;">
+    <div class="layout-container brutalist-grid border-none">
+        <div id="footer-info" class="col-span-full lg:col-span-4 grid-block !border-none">
+            <div class="mb-6"><span class="text-sm tracking-tight leading-relaxed font-medium"
+                                    style="color: var(--footer-text);">先宏資訊股份有限公司</span></div>
+            <p class="tracking-tight max-w-xs font-medium text-[12px]" style="color: var(--footer-text);">
+                從 Notes 維護到 AI 原生與企業轉型領航者。我們讓沉睡的企業知識庫活起來，為您的數位轉型打造最務實的升級路徑。
+            </p>
+            <p class="tracking-tight font-medium text-[12px] mt-3 flex items-start gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;margin-top:1px;">location_on</span>10694
+                台北市大安區忠孝東路四段 270 號 17 樓（近捷運國父紀念館站）</p>
+            <p class="tracking-tight font-medium text-[12px] mt-1 flex items-center gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;">call</span><a href="tel:+886277252968"
+                                                                                              class="hover:text-primary">+886-2-7725-2968</a>
+            </p>
+            <p class="tracking-tight font-medium text-[12px] mt-1 flex items-center gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;">mail</span><a
+                href="mailto:hello@xred.com.tw" class="hover:text-primary">hello@xred.com.tw</a></p>
+        </div>
+        <div
+            class="col-span-full sm:col-span-4 lg:col-span-3 lg:col-start-10 grid-block !border-none flex flex-col items-end text-right">
+            <div class="flex gap-4">
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="YouTube" title="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="Facebook" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                    </svg>
+                </a>
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="LinkedIn" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="text-[10px] font-bold tracking-widest font-mono mt-3" style="color: var(--footer-copyright);">
+                © 2026 XRed Information
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/assets/js/theme-toggle.js"></script>
+</body>
+</html>

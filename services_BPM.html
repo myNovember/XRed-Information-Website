@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Xpower BPM 企業簽核 | 先宏資訊</title>
+    <!-- SEO & Google Analytics -->
+    <meta name="keywords" content="Xpower BPM, 企業簽核, 電子簽核流程, 流程設計器, 動態路由, 簽核引擎, BPM 系統">
+    <meta name="description"
+          content="Xpower BPM 提供直覺的視覺化流程設計器與強大的動態路由功能。採用純 Vue.js 與 Python 打造的現代化電子簽核引擎，滿足各種高複雜度的企業內部簽核需求。">
+    <link rel="icon" href="assets/img/xred-logo-icon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBKZG4REL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-SRBKZG4REL");
+    </script>
+    <!-- SEO & Google Analytics -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;family=IBM+Plex+Mono:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/assets/css/common.css" />
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<header id="header" class="sticky top-0 z-50 w-full transition-colors duration-300"
+        style="background-color: var(--header-bg);">
+    <nav class="layout-container flex justify-between items-stretch w-full h-[60px]">
+        <div id="header-logo" class="pr-3 sm:pr-6 flex items-center justify-start border-b border-outline-variant"
+             style="padding-left: 12px; background-color: var(--logo-bg, #f8faff);">
+            <a href="/" class="flex items-center">
+                <img alt="XRed Information" class="h-10 w-auto" style="filter: var(--logo-filter);"
+                     src="/assets/img/xred-logo.png" />
+                <h2 class="text-2xl font-black tracking-tight hidden sm:block"
+                    style="margin-left: 20px; color: var(--logo-text, #0b1326);">先宏資訊</h2>
+            </a>
+        </div>
+        <div class="flex-grow lg:hidden border-b border-outline-variant"
+             style="background-color: var(--logo-bg, #f8faff);"></div>
+        <div class="hidden lg:flex flex-grow items-stretch justify-end border-b border-outline-variant">
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/">[ 首頁 ]</a>
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/AboutUs.html">[ 關於先宏 ]</a>
+            <div class="relative group flex items-stretch border-r border-outline-variant">
+                <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
+                   style="color: var(--nav-text);" href="#">[ 產品與服務 ▾ ]</a>
+                <div
+                    class="hidden group-hover:block absolute top-full right-0 z-50 min-w-[280px] border border-outline-variant shadow-2xl"
+                    style="background-color: var(--header-bg);">
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// AI_賦能應用
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI
+                        知識助理</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// 企業協同辦公
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+                    <div
+                        class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+                        style="color: var(--nav-active);">// HCL_原廠專區
+                    </div>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-text);" href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
+                       style="color: var(--nav-text);" href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+                </div>
+            </div>
+            <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
+               style="color: var(--nav-text);" href="/Customers.html">[ 客戶實例 ]</a>
+            <div class="relative group flex items-stretch border-r border-outline-variant">
+                <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
+                   style="color: var(--nav-text);" href="#">[ 資源中心 ▾ ]</a>
+                <div
+                    class="hidden group-hover:block absolute top-full right-0 z-50 min-w-[240px] border border-outline-variant shadow-2xl"
+                    style="background-color: var(--header-bg);">
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
+                       style="color: var(--nav-active);" href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt;
+                        Resource Hub ↗</a>
+                    <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
+                       style="color: var(--nav-active);" href="https://www.xred.com.tw:8000/ChatBotV2.html"
+                       target="_blank">&gt; X-Pert AI 體驗 ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-stretch">
+            <a href="/ContactUs.html"
+               class="px-8 border-l border-b border-outline-variant bg-primary text-on-primary font-bold uppercase tracking-tighter transition-all text-sm contact-btn hidden sm:flex items-center">
+                CONTACT_US.EXE
+            </a>
+            <button id="mobile-menu-btn"
+                    class="lg:hidden px-5 border-l border-b border-outline-variant flex items-center transition-all"
+                    style="color: var(--nav-text);" aria-label="選單"
+                    onclick="var m=document.getElementById('mobile-menu'); m.classList.toggle('hidden'); var i=document.getElementById('mobile-menu-icon'); i.textContent = m.classList.contains('hidden')?'menu':'close';">
+                <span class="material-symbols-outlined text-2xl" id="mobile-menu-icon">menu</span>
+            </button>
+            <button id="theme-toggle"
+                    class="px-6 border-l border-b border-outline-variant flex items-center transition-all"
+                    style="color: var(--nav-text);" title="切換主題">
+                <span class="material-symbols-outlined text-xl" id="theme-icon">dark_mode</span>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+         class="hidden lg:hidden border-t border-outline-variant max-h-[calc(100vh-60px)] overflow-y-auto"
+         style="background-color: var(--header-bg);">
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/">[ 首頁 ]</a>
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/AboutUs.html">[ 關於先宏 ]</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// AI_賦能應用
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI 知識助理</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// 企業協同辦公
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// HCL_原廠專區
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
+           href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+        <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
+           href="/Customers.html">[ 客戶實例 ]</a>
+        <div
+            class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
+            style="color: var(--nav-active);">// 資源中心
+        </div>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
+           href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt; Resource Hub ↗</a>
+        <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
+           href="https://www.xred.com.tw:8000/ChatBotV2.html" target="_blank">&gt; X-Pert AI 體驗 ↗</a>
+        <a href="/ContactUs.html"
+           class="block px-6 py-4 bg-primary text-on-primary font-bold uppercase tracking-tighter text-sm text-center">CONTACT_US.EXE</a>
+    </div>
+</header>
+<main class="layout-container border-x border-outline-variant">
+    <section id="hero" class="border-b border-outline-variant relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none select-none opacity-[0.07]"
+             style="background-image: linear-gradient(var(--on-background) 1px, transparent 1px), linear-gradient(90deg, var(--on-background) 1px, transparent 1px); background-size: 48px 48px;"></div>
+        <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 pointer-events-none select-none opacity-[0.06]">
+            <span class="material-symbols-outlined text-primary" style="font-size: 480px; line-height: 1;">schema</span>
+        </div>
+        <div class="absolute right-6 bottom-4 pointer-events-none select-none opacity-30 hidden md:block">
+<pre class="text-[10px] font-mono text-primary leading-[1.2] text-right">// XRED://BPM_FLOW
+// flow: ACTIVE  │ nodes: N       │ engine: BPM</pre>
+        </div>
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-8 block font-bold font-mono">// WORKFLOW_ENGINE</span>
+            <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter mb-12">
+                <span class="text-primary">Xpower BPM</span> — 企業流程管理與簽核解決方案
+            </h1>
+            <p class="text-on-surface-variant max-w-4xl font-medium text-[16px]">
+                歷經多年企業實戰驗證的 BPM 簽核引擎。同一套完整功能，兩種架構選擇——從 <span
+                class="text-primary">Domino</span> 原生到雲端 SaaS，滿足不同階段的企業需求。
+            </p>
+        </div>
+    </section>
+    <section id="stats" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// BY_THE_NUMBERS</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">為什麼企業選擇先宏 <span
+                class="text-primary">BPM</span></h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-0 border border-outline-variant mb-10">
+                <div class="p-8 border-r border-b md:border-b-0 border-outline-variant">
+                    <div class="text-5xl md:text-6xl font-black text-primary mb-3 tracking-tighter">600<span
+                        class="text-3xl">+</span></div>
+                    <div class="text-on-surface-variant text-xs font-mono uppercase tracking-widest font-bold">
+                        單一客戶最高表單數
+                    </div>
+                </div>
+                <div class="p-8 border-b md:border-b-0 md:border-r border-outline-variant">
+                    <div class="text-5xl md:text-6xl font-black text-primary mb-3 tracking-tighter">百萬<span
+                        class="text-3xl">+</span></div>
+                    <div class="text-on-surface-variant text-xs font-mono uppercase tracking-widest font-bold">
+                        累計處理流程實例
+                    </div>
+                </div>
+                <div class="p-8 border-r border-outline-variant">
+                    <div class="text-5xl md:text-6xl font-black text-primary mb-3 tracking-tighter">10<span
+                        class="text-3xl"> 種</span></div>
+                    <div class="text-on-surface-variant text-xs font-mono uppercase tracking-widest font-bold">
+                        簽核模式完整支援
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="text-5xl md:text-6xl font-black text-primary mb-3 tracking-tighter">多產業</div>
+                    <div class="text-on-surface-variant text-xs font-mono uppercase tracking-widest font-bold">
+                        金融·製造·科技·零售
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">verified</span>深厚的企業實戰經驗
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        已協助半導體封測、銀行法金、製造業等產業成功導入，累計處理逾百萬件流程實例。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">hub</span>ERP 異質系統整合</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">已實際串接 <span
+                        class="text-primary font-bold">SAP、Oracle ERP、TipTop</span> 等主流 ERP，以及 MS-SQL、Informix、DB2
+                        等外部資料來源。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">smartphone</span>行動化簽核
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">桌機、手機、平板皆可處理簽核文件，RWD
+                        響應式設計，主管在外也能即時審批。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">notifications_active</span>Line
+                        Bot / Teams / Email 通知</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">多管道即時推播待簽文件，提升處理效率。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 md:col-span-2 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">shield_lock</span>高安全性</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">RBAC
+                        角色式權限控制搭配讀者/作者欄位，細粒度存取控制保護核心簽核資料。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="modules" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// CUSTOM_MODULES</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">基於 <span
+                class="text-primary">Xpower BPM</span> 打造的企業級模組實績</h2>
+            <p class="text-on-surface-variant max-w-4xl mb-10 text-[14px]">我們先宏不僅提供強大的 BPM
+                引擎，更擁有豐富的客製化實戰經驗。無論是日常行政，或是跨部門、跨系統的核心業務，我們都能為您量身打造專屬的簽核流程：</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-4 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">account_balance</span>行政與財務管理模組
+                    </h3>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>電子公文與簽呈系統</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>零用金與日常請款系統</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>請採驗付系統 (Procurement
+                            &amp; Payment)
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>贈品與物管系統</li>
+                    </ul>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-4 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">settings_suggest</span>資訊與系統架構優化
+                    </h3>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>企業入口網站 (EIP)
+                            效能調校與行動化（平板/手機）
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>採購需求申請系統（含行動版加會簽功能）
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>IT 服務滿意度調查系統</li>
+                    </ul>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 md:col-span-2 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-4 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">factory</span>特定產業與核心業務模組
+                    </h3>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>【金融業】授信作業與聯徵查詢報告系統
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>【金融業】中小貸後季檢核與作業風險通報
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>【製造業】MSA 儀器校正管理系統
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="architecture" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// TWO_ARCHITECTURES</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">兩種架構，同一套功能</h2>
+            <p class="text-on-surface-variant max-w-4xl mb-10 text-[14px]">Xpower BPM
+                的核心簽核功能完全一致，差別在於底層架構。企業可依據現有環境與未來規劃，選擇最適合的版本：</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div class="border border-outline-variant flex flex-col">
+                    <div
+                        class="p-6 md:p-8 bg-surface-container-low border-b border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                        <span
+                            class="text-xs font-bold font-mono tracking-widest uppercase text-on-surface-variant mb-3 block">// CLASSIC_ARCH</span>
+                        <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-2">Domino 原生版</h3>
+                        <p class="text-on-surface-variant text-sm">經典架構 · 地端部署</p>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">建構於 <span
+                            class="text-primary font-bold">HCL Notes / Domino</span> 平台之上，採用 XPages 開發框架，結合
+                            Server-Side JavaScript、CSS 與 HTML。</p>
+                        <p class="text-on-surface text-sm leading-relaxed mb-6"><span class="font-black">適合對象</span>：已有
+                            Domino 環境的企業，希望在既有平台上快速擴展簽核應用，充分利用現有 IT 投資。</p>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>與 Domino 帳號、權限體系無縫整合
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>直接承襲 Notes
+                                安全機制（Reader / Author 欄位）
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>適合地端部署，資料不離開企業機房
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>支援 AD SSO 單一登入
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest p-6 border-t border-outline-variant pl-[0px] pr-[0px] pt-[0px] pb-[20px]">
+                        <img src="/assets/img/bpm/xred_workflow_viewer.png"
+                             alt="Domino 版 BPM 流程檢視畫面 — 比價暨請購單簽核流程" class="w-full h-auto block" />
+                        <p class="text-on-surface-variant text-center italic pt-[0px] mt-[20px] text-[12px]">Domino 版
+                            BPM 流程檢視與簽核追蹤</p>
+                    </div>
+                </div>
+                <div class="border border-outline-variant lg:border-l-0 border-t-0 lg:border-t flex flex-col">
+                    <div
+                        class="p-6 md:p-8 bg-primary text-on-primary border-b border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                        <span class="text-xs font-bold font-mono tracking-widest uppercase opacity-80 mb-3 block">// MODERN_ARCH</span>
+                        <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-2">Python + Vue.js 版</h3>
+                        <p class="text-sm opacity-90">現代化架構 · 支援 SaaS</p>
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">採用 <span
+                            class="text-primary font-bold">Python FastAPI</span> 後端搭配 <span
+                            class="text-primary font-bold">Vue 3 + Quasar Framework</span> 前端，雲原生架構，可提供 SaaS
+                            雲端服務。</p>
+                        <p class="text-on-surface text-sm leading-relaxed mb-6"><span class="font-black">適合對象</span>：希望走向現代化架構的企業，或尚無
+                            Domino 環境但需要企業級 BPM 的組織。</p>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>瀏覽器直接操作，不需安裝
+                                Notes Client
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>支援 SaaS 雲端部署（Google
+                                Cloud Run），也可地端自建
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>支援 AD SSO 單一登入（Azure
+                                AD / Entra ID）
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>PostgreSQL + JSONB
+                                動態擴充，新增欄位免改 DB Schema
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>自動擴縮、藍綠部署、零停機更新
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-surface-container-low p-6 border-t border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                        <h4 class="text-xs font-bold font-mono tracking-widest uppercase text-primary mb-4 text-center">
+                            // SYSTEM_STACK</h4>
+                        <div class="space-y-2">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div
+                                    class="border border-outline-variant p-3 text-center text-xs font-bold bg-surface-container">
+                                    💻 前端：Vue 3 + Quasar
+                                </div>
+                                <div
+                                    class="border border-outline-variant p-3 text-center text-xs font-bold bg-surface-container">
+                                    📱 行動版 (RWD)
+                                </div>
+                            </div>
+                            <div class="text-center text-xs font-mono text-on-surface-variant py-1">⬇ RESTful API ⬇
+                            </div>
+                            <div class="border border-outline-variant p-4 bg-surface-container">
+                                <div class="text-xs font-bold text-primary mb-2 text-center font-mono">⚙️ 後端微服務：Python
+                                    FastAPI
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1">
+                                    <span
+                                        class="bg-surface-container-lowest border border-outline-variant px-2 py-1 text-[10px] font-mono">BPM 流程引擎</span>
+                                    <span
+                                        class="bg-surface-container-lowest border border-outline-variant px-2 py-1 text-[10px] font-mono">動態表單引擎</span>
+                                    <span
+                                        class="bg-surface-container-lowest border border-outline-variant px-2 py-1 text-[10px] font-mono">角色權限控制</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="border border-outline-variant p-3 text-center bg-surface-container">
+                                    <div class="text-xs font-bold mb-1">🗄️ 核心資料庫</div>
+                                    <div class="text-[10px] text-on-surface-variant font-mono">PostgreSQL + JSONB</div>
+                                </div>
+                                <div class="border border-outline-variant p-3 text-center bg-surface-container">
+                                    <div class="text-xs font-bold mb-1">🔗 外部系統整合</div>
+                                    <div class="text-[10px] text-on-surface-variant font-mono">Azure AD / ERP / Line
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="core-features" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// PLATFORM_CORE</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">平台核心功能</h2>
+            <div class="mb-0">
+                <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
+                    <img src="/assets/img/bpm/bpm_core_engine.jpg" alt="Xpower BPM 核心引擎視覺化"
+                         class="w-full h-auto block border border-outline-variant" />
+                    <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
+                        核心引擎：流程定義、動態路由、權限控管三大引擎協同運作</p>
+                </div>
+            </div>
+            <div class="mb-0">
+                <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
+                    <img src="/assets/img/bpm/bpm_experience_upgrade.jpg" alt="Xpower BPM 體驗升級 — 三大功能"
+                         class="w-full h-auto block border border-outline-variant" />
+                    <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
+                        體驗升級：智慧表單、行動簽核、即時監控，全面提升簽核效率</p>
+                </div>
+            </div>
+            <div class="mb-0">
+                <div
+                    class="p-6 md:p-8 border border-outline-variant bg-surface-container-low pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// WORKFLOW_ENGINE</span>
+                    <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight">流程引擎 Workflow Engine</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl">採用 <span
+                        class="text-primary font-bold">BPMN 2.0</span> 標準流程定義，支援四種節點類型（起始 / 任務 / 閘道
+                        / 結束）與三種連線類型（必經 / 條件 /
+                        其他）。流程定義完全儲存於資料庫，可透過圖形化設計器進行拖拉式設計，無須修改程式碼。支援條件運算式，可根據表單欄位值動態決定流程走向。
+                    </p>
+                </div>
+                <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
+                    <img src="/assets/img/bpm/bpm_workflow_designer.png" alt="Xpower BPM 流程設計器"
+                         class="w-full h-auto block border border-outline-variant" />
+                    <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
+                        圖形化流程設計器：出差申請單範例，包含條件閘道、多層主管簽核與子流程</p>
+                </div>
+            </div>
+            <div class="mb-10">
+                <div
+                    class="p-6 md:p-8 border border-outline-variant bg-surface-container-low pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// SIGNATURE_MODES</span>
+                    <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight">10 種簽核模式</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                        完整支援企業所需的全部簽核情境：</p>
+                </div>
+                <div class="overflow-x-auto border border-outline-variant border-t-0">
+                    <table class="bpm-table">
+                        <thead>
+                        <tr>
+                            <th class="w-32">模式</th>
+                            <th>說明</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="font-bold text-on-surface">串簽</td>
+                            <td>依序逐級簽核</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">會簽</td>
+                            <td>多人同時簽核，支援多數決過站</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">或簽</td>
+                            <td>任一人核准即通過</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">加簽</td>
+                            <td>動態加入額外簽核人</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">退回</td>
+                            <td>四種退回模式（固定關卡 / 禁止退回 / 使用者指定 / 限定關卡）</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">轉簽</td>
+                            <td>將任務轉派給其他人員</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">代理</td>
+                            <td>支援期間代理機制</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">條件式</td>
+                            <td>依表單欄位值動態決定流程走向</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">批次</td>
+                            <td>批次核可 / 批次駁回</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-on-surface">混合</td>
+                            <td>母子流程整合，子流程可獨立運作</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="border border-outline-variant mb-10">
+                <div
+                    class="p-6 md:p-8 border-b border-outline-variant bg-surface-container-low pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// DYNAMIC_ROUTING</span>
+                    <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight">動態路由引擎</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                        支援關卡進程主管審核、核決權限動態判斷、靈活退回機制。</p>
+                </div>
+                <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
+                    <img src="/assets/img/bpm/bpm_dynamic_routing.png" alt="動態路由：智慧核決與退回機制概念圖"
+                         class="w-full h-auto block" />
+                </div>
+            </div>
+            <div class="mb-0">
+                <div
+                    class="p-6 md:p-8 border border-outline-variant bg-surface-container-low pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// FORM_ENGINE</span>
+                    <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight">表單引擎 Form Engine</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl mb-4">動態 <span
+                        class="text-primary font-bold">Vue 元件架構</span>搭配 <span class="text-primary font-bold">JSONB 儲存</span>，新增欄位無須修改資料庫
+                        Schema。內建多種欄位元件：</p>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>文字輸入、條件式下拉選單、日期選擇、核取方塊、Radio
+                            按鈕
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>子表格（SubForm）、檔案上傳、數位簽名
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>金額欄位（千分位）、加總 /
+                            平均計算、必填檢核
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>依流程站別設定欄位權限（編輯
+                            / 唯讀 / 隱藏）
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>表單版本控管，歷史表單可追溯
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-surface-container-lowest leading-[0] pb-[0px]">
+                    <img src="/assets/img/bpm/bpm_form_view.png" alt="Xpower BPM 表單畫面"
+                         class="w-full h-auto block border border-outline-variant" />
+                    <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] leading-normal mb-[0px] pb-[20px]">
+                        現代化表單介面：支援多 Section 分區、必填驗證、下拉選單、附件上傳等豐富元件</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-10">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-4 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">task_alt</span>任務管理</h3>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>個人待辦清單，6
+                            種任務狀態追蹤（待簽核/進行中/已完成/退回/轉簽/逾時）
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>任務轉派與委派機制、代理人設定（支援期間代理）
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>SLA 時效管理與逾時自動三級警示（到期前
+                            3 日、前 1 日、當日）
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>稽催通知支援重複催辦與主管介入時機設定
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-4 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">monitoring</span>監控與管理
+                    </h3>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>即時 Dashboard
+                            數據看板：待簽核數、申請數、退回數、進行中案件等 KPI
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>流程實例以 SVG
+                            圖形即時呈現，四種顏色區分節點狀態
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>完整稽核日誌（append-only
+                            設計），所有操作不可篡改
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>自訂報表功能，高效聚合查詢
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div class="border border-outline-variant">
+                    <div
+                        class="p-6 bg-surface-container-low border-b border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                        <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// DASHBOARD</span>
+                        <h4 class="text-lg font-black tracking-tight">即時看板</h4>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 pl-[0px] pr-[0px] pt-[0px] pb-[20px]">
+                        <img src="/assets/img/bpm/bpm_dashboard.png" alt="Xpower BPM Dashboard 系統首頁"
+                             class="w-full h-auto block" />
+                        <p class="text-on-surface-variant text-center italic pt-[0px] mt-[20px] text-[12px]">
+                            待簽核數、申請數、退回數一目了然，搭配系統公告與批次簽核</p>
+                    </div>
+                </div>
+                <div class="border border-outline-variant md:border-l-0">
+                    <div
+                        class="p-6 bg-surface-container-low border-b border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                        <span class="text-primary text-xs tracking-[0.4em] uppercase mb-2 block font-bold font-mono">// WORKFLOW_TRACE</span>
+                        <h4 class="text-lg font-black tracking-tight">簽核歷程追蹤</h4>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 pl-[0px] pr-[0px] pt-[0px] pb-[20px]">
+                        <img src="/assets/img/bpm/bpm_workflow_history.png" alt="Xpower BPM 簽核歷程追蹤"
+                             class="w-full h-auto block" />
+                        <p class="text-on-surface-variant text-center italic pt-[0px] mt-[20px] text-[12px]">
+                            以四色節點即時呈現流程進度（已完成 / 目前關卡 / 待進行 / 駁回）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="mobile" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// MOBILE_SUPPORT</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">行動裝置支援</h2>
+            <p class="text-on-surface-variant max-w-4xl mb-10 text-[14px]">前端採用 <span
+                class="text-primary font-bold">RWD 響應式設計</span>，支援 Desktop、Tablet 及 Mobile 三種版面配置，無需安裝任何
+                APP。支援觸控操作與深色/淺色模式切換。原生支援繁體中文與英文雙語介面。</p>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-0 border border-outline-variant">
+                <div
+                    class="md:col-span-5 bg-surface-container-lowest p-[0px] flex items-center justify-center border-b md:border-b-0 md:border-r border-outline-variant">
+                    <img src="/assets/img/bpm/bpm_mobile_inbox.png" alt="Xpower BPM 手機版待簽核清單"
+                         class="w-full h-auto block" />
+                </div>
+                <div
+                    class="md:col-span-7 p-8 md:p-5 bg-surface-container-low flex flex-col justify-center pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-2xl font-black mb-4 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">phone_iphone</span>行動簽核，不需安裝
+                        APP</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                        手機瀏覽器即可檢視待辦、批次簽核，主管在外奔波也能即時批准案件。</p>
+                    <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>Desktop / Tablet / Mobile
+                            三種版面自動適配
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>觸控操作 + 深色/淺色模式切換
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>繁體中文 / 英文雙語介面</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">•</span>批次簽核功能，海量表單一次處理
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="integration" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// ENTERPRISE_INTEGRATION</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">企業整合能力</h2>
+            <div class="overflow-x-auto border border-outline-variant">
+                <table class="bpm-table">
+                    <thead>
+                    <tr>
+                        <th class="w-32">整合項目</th>
+                        <th>說明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="font-bold text-on-surface">AD SSO 單一登入</td>
+                        <td>透過 <span class="text-primary font-bold">Azure AD / Entra ID</span> 實現 OAuth 2.0 標準 SSO
+                            認證，無 Session 機制，防止 CSRF 攻擊
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">組織架構同步</td>
+                        <td>每日自動同步部門、人員與角色資料，差異比對確保效率</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">ERP 異質整合</td>
+                        <td>已實際串接 <span class="text-primary font-bold">SAP、Oracle ERP、TipTop</span>，透過 REST API
+                            整合
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">文件歸檔</td>
+                        <td>流程結案後自動歸檔至 SharePoint / 指定文件庫</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">通知推送</td>
+                        <td>Email SMTP、Teams Webhook、Line Bot 多管道即時通知</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">REST API</td>
+                        <td>基於 FastAPI 自動生成 OpenAPI (Swagger) 文件，所有功能皆可透過 API 存取</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section id="ai" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span
+                class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// AI_VALUE_ADD</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">AI 加值功能</h2>
+            <p class="text-on-surface-variant max-w-4xl mb-10 text-[14px]">Xpower BPM 整合先宏 <span
+                class="text-primary font-bold">X-Pert AI</span> 技術，提供平台級 AI 微服務，任何表單或流程皆可依需求啟用：
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 mb-10">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">auto_fix_high</span>智慧表單預填
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        系統依據申請人歷史資料與組織規則，自動建議表單欄位填寫內容，降低重複輸入負擔。採用規則引擎比對推薦，不消耗
+                        AI Token。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">document_scanner</span>附件 OCR
+                        辨識</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        上傳收據、發票等紙本憑證影像，系統自動辨識金額、日期、商家名稱等欄位並回填表單，大幅減少人工逐筆輸入。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">warning</span>費用異常偵測</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        費用報銷送出前，自動比對歷史資料統計分布，標記異常項目並產出說明文字供審核者參考。</p>
+                </div>
+            </div>
+            <div
+                class="border-l-4 border-primary bg-surface-container-low p-6 md:p-8 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                <span class="text-primary text-xs tracking-[0.4em] uppercase mb-3 block font-bold font-mono">// PHASE_2_ROADMAP</span>
+                <h3 class="text-xl md:text-2xl font-black mb-4 tracking-tight">Phase 2 AI 展望</h3>
+                <ul class="text-on-surface-variant text-sm leading-relaxed space-y-3 list-none">
+                    <li class="flex gap-2"><span class="text-primary font-bold">•</span><span><span
+                        class="text-on-surface font-black">流程瓶頸分析</span>：AI 自動識別卡關節點，產出視覺化報表與優化建議</span>
+                    </li>
+                    <li class="flex gap-2"><span class="text-primary font-bold">•</span><span><span
+                        class="text-on-surface font-black">對話式表單設計 (Chat-to-Form)</span>：用自然語言描述即可建立或調整表單欄位</span>
+                    </li>
+                    <li class="flex gap-2"><span class="text-primary font-bold">•</span><span><span
+                        class="text-on-surface font-black">AI Agent 個人助理</span>：自然語言查詢個人資訊，AI 即時回傳結果</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="security" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// SECURITY_COMPLIANCE</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">安全與合規</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div
+                    class="p-8 border border-outline-variant pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">admin_panel_settings</span>RBAC
+                        權限控制</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">角色式權限搭配 Reader / Author
+                        欄位，細粒度存取控制。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">policy</span>資安測試</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">採用 <span
+                        class="text-primary font-bold">HCL AppScan SAST</span> 原碼掃描，涵蓋 OWASP Top 10、CWE/SANS Top
+                        25。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">bug_report</span>SCA 分析</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">開放原始碼套件 CVE 漏洞檢測。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">enhanced_encryption</span>資料加密
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">HTTPS/TLS 傳輸加密 + 靜態資料 AES-256
+                        加密。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">history_edu</span>稽核日誌</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">append-only
+                        設計，所有操作不可篡改，滿足合規需求。</p>
+                </div>
+                <div
+                    class="p-8 border border-outline-variant md:border-l-0 md:border-t-0 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <h3 class="text-xl font-black mb-3 tracking-tight flex items-center gap-3"><span
+                        class="material-symbols-outlined text-3xl text-primary shrink-0">verified_user</span>合規對應
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">支援 <span
+                        class="text-primary font-bold">GDPR、個資法、ISO 27001</span> 等規範。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="compare" class="border-b border-outline-variant">
+        <div class="p-5 md:p-16">
+            <span class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// ARCH_COMPARISON</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">架構比較一覽</h2>
+            <div class="overflow-x-auto border border-outline-variant">
+                <table class="bpm-table">
+                    <thead>
+                    <tr>
+                        <th class="w-32">比較項目</th>
+                        <th>Domino 原生版</th>
+                        <th>Python + Vue.js 版</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="font-bold text-on-surface">後端技術</td>
+                        <td>HCL Domino / XPages</td>
+                        <td>Python FastAPI</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">前端技術</td>
+                        <td>XPages (SSJS + HTML)</td>
+                        <td>Vue 3 + Quasar Framework</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">部署方式</td>
+                        <td>地端 (On-Premise)</td>
+                        <td>SaaS 雲端 / 地端皆可</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">使用者端</td>
+                        <td>瀏覽器 / Notes Client</td>
+                        <td>瀏覽器（免安裝）</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">身份認證</td>
+                        <td>Domino 帳號 / AD SSO</td>
+                        <td>AD SSO（Azure AD / Entra ID）</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">資料庫</td>
+                        <td>Domino NSF</td>
+                        <td>PostgreSQL + JSONB</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">適合企業</td>
+                        <td>已有 Domino 環境</td>
+                        <td>新導入或現代化轉型</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">簽核功能</td>
+                        <td colspan="2" class="text-center font-bold text-primary">完全一致（10 種模式）</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">行動簽核</td>
+                        <td colspan="2" class="text-center font-bold text-primary">皆支援（RWD 響應式）</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">通知推送</td>
+                        <td colspan="2" class="text-center font-bold text-primary">皆支援（Email / Line Bot / Teams）</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">ERP 整合</td>
+                        <td colspan="2" class="text-center font-bold text-primary">皆支援（REST API）</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold text-on-surface">AI 加值功能</td>
+                        <td colspan="2" class="text-center font-bold text-primary">皆支援</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <details class="mt-10 border border-outline-variant">
+                <summary
+                    class="cursor-pointer p-6 bg-surface-container-low font-black text-base flex items-center gap-3 hover:bg-surface-container transition-colors pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+                    <span class="material-symbols-outlined text-primary">expand_more</span>
+                    點擊展開完整簽核功能清單（供 IT 人員評估用）
+                </summary>
+                <div
+                    class="p-6 md:p-8 space-y-8 pl-[20px] pr-[20px] pt-[20px] pb-[20px] md:pl-[64px] md:pr-[64px] md:pt-[64px] md:pb-[64px]">
+
+                    <div>
+                        <h3 class="text-lg font-black mb-3 tracking-tight">流程節點與簽核設定</h3>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>母子流程整合與子流程獨立使用
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>簽核人員多元設定：申請人、直屬主管、部門主管、作業部門主管、特定人、指定人
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>無簽核人員跳關、重覆簽核者自動
+                                ByPass
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>條件閘道依欄位值動態決定流程走向
+                                (==, !=, &gt;, &gt;=, &lt;, &lt;=)
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black mb-3 tracking-tight">會簽與加簽</h3>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>動態加會簽、多層次會簽
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>會簽人數決過站設定（N 人中
+                                M 人同意即通過）
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black mb-3 tracking-tight">退回與抽單機制</h3>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>支援四種退回模式：退回固定關卡、禁止退回、使用者自行指定、限定指定關卡
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>申請人送出後、下一關尚未簽核前，可執行抽單
+                                (Recall)
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black mb-3 tracking-tight">任務時效與代理</h3>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>SLA 稽催通知：支援多層級逾時警示（到期前
+                                3 日 / 1 日 / 當日）與重複催辦
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>主管介入機制：可設定稽催時是否副本通知主管，或於第
+                                N 次稽催才通知主管
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>代理人設定：支援期間代理，代理人可處理被代理人之所有待辦事項
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black mb-3 tracking-tight">表單與權限控管</h3>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>依流程站別動態控制欄位權限：必填、編輯、唯讀、隱藏
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>表單版本控管：歷史表單與流程實例皆保留當下版本狀態
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>簽核防堵機制：後端 JWT
+                                Token 驗證，不可切換帳號簽核
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black mb-3 tracking-tight">系統整合與稽核</h3>
+                        <ul class="text-on-surface-variant text-sm leading-relaxed space-y-2 list-none">
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>完整稽核日誌（Append-only）：所有操作軌跡（簽核
+                                / 退回 / 轉簽 / 意見）不可篡改
+                            </li>
+                            <li class="flex gap-2"><span class="text-primary font-bold">•</span>REST API 整合與自動生成
+                                OpenAPI (Swagger) 文件
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+    <section id="cta" class="border-b border-outline-variant bg-primary">
+        <div class="p-5 md:p-16">
+            <h2 class="text-on-primary text-4xl md:text-5xl font-black mb-10 tracking-tighter">想為企業導入專業 BPM
+                簽核引擎？</h2>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/ContactUs.html"
+                   class="bg-on-primary text-primary px-8 py-5 font-bold text-lg tracking-tighter hover:bg-background hover:text-on-background transition-all flex items-center justify-center gap-3 border border-on-primary">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    預約展示
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="footer" class="transition-colors duration-300" style="background-color: transparent;">
+    <div class="layout-container brutalist-grid border-none">
+        <div id="footer-info" class="col-span-full lg:col-span-4 grid-block !border-none">
+            <div class="mb-6"><span class="text-sm tracking-tight leading-relaxed font-medium"
+                                    style="color: var(--footer-text);">先宏資訊股份有限公司</span></div>
+            <p class="tracking-tight max-w-xs font-medium text-[12px]" style="color: var(--footer-text);">
+                從 Notes 維護到 AI 原生與企業轉型領航者。我們讓沉睡的企業知識庫活起來，為您的數位轉型打造最務實的升級路徑。
+            </p>
+            <p class="tracking-tight font-medium text-[12px] mt-3 flex items-start gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;margin-top:1px;">location_on</span>10694
+                台北市大安區忠孝東路四段 270 號 17 樓（近捷運國父紀念館站）</p>
+            <p class="tracking-tight font-medium text-[12px] mt-1 flex items-center gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;">call</span><a href="tel:+886277252968"
+                                                                                              class="hover:text-primary">+886-2-7725-2968</a>
+            </p>
+            <p class="tracking-tight font-medium text-[12px] mt-1 flex items-center gap-3 lg:whitespace-nowrap"
+               style="color: var(--footer-text);"><span class="material-symbols-outlined shrink-0"
+                                                        style="font-size:14px;">mail</span><a
+                href="mailto:hello@xred.com.tw" class="hover:text-primary">hello@xred.com.tw</a></p>
+        </div>
+        <div
+            class="col-span-full sm:col-span-4 lg:col-span-3 lg:col-start-10 grid-block !border-none flex flex-col items-end text-right">
+            <div class="flex gap-4">
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="YouTube" title="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="Facebook" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                    </svg>
+                </a>
+                <a class="hover:text-primary border border-outline-variant p-2 flex items-center justify-center"
+                   style="color: var(--footer-text);" href="#" aria-label="LinkedIn" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="text-[10px] font-bold tracking-widest font-mono mt-3" style="color: var(--footer-copyright);">
+                © 2026 XRed Information
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/assets/js/theme-toggle.js"></script>
+</body>
+</html>
