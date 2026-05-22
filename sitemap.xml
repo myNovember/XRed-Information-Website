@@ -1,65 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
   <!-- 首頁與公司資訊 -->
   <url>
     <loc>https://www.xred.com.tw/</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.xred.com.tw/AboutUs.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.xred.com.tw/ContactUs.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.xred.com.tw/Customers.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- 核心產品與 SaaS (全新增頁面) -->
+  <!-- AI 賦能應用 -->
   <url>
-    <loc>https://www.xred.com.tw/product_xpert_rag.html</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.xred.com.tw/services_XPertRAG.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.xred.com.tw/services_QilinAI.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.xred.com.tw/services_OCR.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.xred.com.tw/services_DominoClaw.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- 原有服務 (保留舊網址以延續 SEO 權重) -->
-  <url>
-    <loc>https://www.xred.com.tw/services_BPM.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.xred.com.tw/services_notesUpgrade.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 企業協同辦公 -->
   <url>
     <loc>https://www.xred.com.tw/services_EIP.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.xred.com.tw/services_BPM.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- HCL 專區 (預計上線的新網域結構) -->
+  <!-- HCL 專區 -->
   <url>
-    <loc>https://www.xred.com.tw/hcl_landing.html</loc>
+    <loc>https://www.xred.com.tw/services_notesUpgrade.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.xred.com.tw/hcl_voltmx.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- 外部重要連結 (可選擇性不放入 sitemap，這主要引導爬蟲，但若有實體網頁可加) -->
-  <!-- hub.nsf 與 ChatBot 屬於外部子系統，通常不直接列入靜態網頁 sitemap，讓爬蟲自己從連結進入即可 -->
-  
 </urlset>

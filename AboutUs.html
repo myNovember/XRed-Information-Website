@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="dark" lang="zh-TW">
 <head>
     <meta charset="utf-8" />
@@ -28,8 +28,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <script src="/assets/js/tailwind-config.js"></script>
-    <link rel="stylesheet" href="/assets/css/common.css" />
+    <script src="assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="assets/css/common.css" />
 </head>
 <body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
 <header id="header" class="sticky top-0 z-50 w-full transition-colors duration-300"
@@ -37,9 +37,9 @@
     <nav class="layout-container flex justify-between items-stretch w-full h-[60px]">
         <div id="header-logo" class="pr-3 sm:pr-6 flex items-center justify-start border-b border-outline-variant"
              style="padding-left: 12px; background-color: var(--logo-bg, #f8faff);">
-            <a href="/" class="flex items-center">
+            <a href="index.html" class="flex items-center">
                 <img alt="XRed Information" class="h-10 w-auto" style="filter: var(--logo-filter);"
-                     src="/assets/xred-logo.png" />
+                     src="assets/img/xred-logo.png" />
                 <h2 class="text-2xl font-black tracking-tight hidden sm:block"
                     style="margin-left: 20px; color: var(--logo-text, #0b1326);">先宏資訊</h2>
             </a>
@@ -48,9 +48,9 @@
              style="background-color: var(--logo-bg, #f8faff);"></div>
         <div class="hidden lg:flex flex-grow items-stretch justify-end border-b border-outline-variant">
             <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
-               style="color: var(--nav-text);" href="/">[ 首頁 ]</a>
+               style="color: var(--nav-text);" href="index.html">[ 首頁 ]</a>
             <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
-               style="color: var(--nav-text);" href="/AboutUs.html">[ 關於先宏 ]</a>
+               style="color: var(--nav-text);" href="AboutUs.html">[ 關於先宏 ]</a>
             <div class="relative group flex items-stretch border-r border-outline-variant">
                 <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
                    style="color: var(--nav-text);" href="#">[ 產品與服務 ▾ ]</a>
@@ -62,34 +62,34 @@
                         style="color: var(--nav-active);">// AI_賦能應用
                     </div>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI
+                       style="color: var(--nav-text);" href="services_XPertRAG.html">&gt; X-Pert RAG 企業 AI
                         知識助理</a>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+                       style="color: var(--nav-text);" href="services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+                       style="color: var(--nav-text);" href="services_OCR.html">&gt; OCR 智慧文件辨識</a>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+                       style="color: var(--nav-text);" href="services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
                     <div
                         class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
                         style="color: var(--nav-active);">// 企業協同辦公
                     </div>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+                       style="color: var(--nav-text);" href="services_EIP.html">&gt; 企業入口網站 EIP</a>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+                       style="color: var(--nav-text);" href="services_BPM.html">&gt; Xpower BPM 企業簽核</a>
                     <div
                         class="px-4 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
                         style="color: var(--nav-active);">// HCL_原廠專區
                     </div>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors border-b border-outline-variant"
-                       style="color: var(--nav-text);" href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+                       style="color: var(--nav-text);" href="services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
                     <a class="block px-4 py-3 text-xs font-bold hover:bg-surface-container transition-colors"
-                       style="color: var(--nav-text);" href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+                       style="color: var(--nav-text);" href="hcl_voltmx.html">&gt; HCL Volt MX</a>
                 </div>
             </div>
             <a class="px-3 flex items-center border-r border-outline-variant hover:bg-surface-container transition-colors text-sm font-bold"
-               style="color: var(--nav-text);" href="/Customers.html">[ 客戶實例 ]</a>
+               style="color: var(--nav-text);" href="Customers.html">[ 客戶實例 ]</a>
             <div class="relative group flex items-stretch border-r border-outline-variant">
                 <a class="px-3 flex items-center hover:bg-surface-container transition-colors text-sm font-bold cursor-pointer"
                    style="color: var(--nav-text);" href="#">[ 資源中心 ▾ ]</a>
@@ -106,7 +106,7 @@
             </div>
         </div>
         <div class="flex items-stretch">
-            <a href="/ContactUs.html"
+            <a href="ContactUs.html"
                class="px-8 border-l border-b border-outline-variant bg-primary text-on-primary font-bold uppercase tracking-tighter transition-all text-sm contact-btn hidden sm:flex items-center">
                 CONTACT_US.EXE
             </a>
@@ -127,39 +127,39 @@
          class="hidden lg:hidden border-t border-outline-variant max-h-[calc(100vh-60px)] overflow-y-auto"
          style="background-color: var(--header-bg);">
         <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
-           href="/">[ 首頁 ]</a>
+           href="index.html">[ 首頁 ]</a>
         <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
-           href="/AboutUs.html">[ 關於先宏 ]</a>
+           href="AboutUs.html">[ 關於先宏 ]</a>
         <div
             class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
             style="color: var(--nav-active);">// AI_賦能應用
         </div>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_XPertRAG.html">&gt; X-Pert RAG 企業 AI 知識助理</a>
+           href="services_XPertRAG.html">&gt; X-Pert RAG 企業 AI 知識助理</a>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
+           href="services_QilinAI.html">&gt; Qilin AI 麒麟悟道</a>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_OCR.html">&gt; OCR 智慧文件辨識</a>
+           href="services_OCR.html">&gt; OCR 智慧文件辨識</a>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
+           href="services_DominoClaw.html">&gt; DominoClaw AI Agent</a>
         <div
             class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
             style="color: var(--nav-active);">// 企業協同辦公
         </div>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_EIP.html">&gt; 企業入口網站 EIP</a>
+           href="services_EIP.html">&gt; 企業入口網站 EIP</a>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_BPM.html">&gt; Xpower BPM 企業簽核</a>
+           href="services_BPM.html">&gt; Xpower BPM 企業簽核</a>
         <div
             class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
             style="color: var(--nav-active);">// HCL_原廠專區
         </div>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
+           href="services_notesUpgrade.html">&gt; HCL Notes / Domino</a>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-text);"
-           href="/hcl_voltmx.html">&gt; HCL Volt MX</a>
+           href="hcl_voltmx.html">&gt; HCL Volt MX</a>
         <a class="block px-6 py-3 border-b border-outline-variant text-sm font-bold" style="color: var(--nav-text);"
-           href="/Customers.html">[ 客戶實例 ]</a>
+           href="Customers.html">[ 客戶實例 ]</a>
         <div
             class="px-6 py-2 text-[10px] font-bold font-mono uppercase tracking-[0.3em] border-b border-outline-variant bg-surface-container"
             style="color: var(--nav-active);">// 資源中心
@@ -168,7 +168,7 @@
            href="http://www.xred.com.tw/hub.nsf" target="_blank">&gt; Resource Hub ↗</a>
         <a class="block px-8 py-3 border-b border-outline-variant text-xs font-bold" style="color: var(--nav-active);"
            href="https://www.xred.com.tw:8000/ChatBotV2.html" target="_blank">&gt; X-Pert AI 體驗 ↗</a>
-        <a href="/ContactUs.html"
+        <a href="ContactUs.html"
            class="block px-6 py-4 bg-primary text-on-primary font-bold uppercase tracking-tighter text-sm text-center">CONTACT_US.EXE</a>
     </div>
 </header>
@@ -214,7 +214,7 @@
                 class="text-primary">三大核心能力</span></h2>
             <p class="text-on-surface-variant max-w-4xl mb-10 text-[14px]">身為 <span class="text-primary font-bold">HCL 在台灣的授權經銷夥伴</span>，先宏的服務涵蓋三大面向，從軟體授權到
                 AI 部署，提供企業一站式的數位升級路徑。</p>
-            <img src="/assets/img/about/hcl_three_pillars.jpg" alt="先宏三大核心能力：授權與產品、服務與維運、培訓與推廣"
+            <img src="assets/img/about/hcl_three_pillars.jpg" alt="先宏三大核心能力：授權與產品、服務與維運、培訓與推廣"
                  class="w-full h-auto block border border-outline-variant" />
             <p class="text-on-surface-variant text-center mb-[0px] italic text-[12px] mt-[0px] pt-[20px] pb-[20px]">先宏在
                 HCL 生態系中的三大定位：授權與產品銷售、服務與維運支援、培訓與技術推廣。</p>
@@ -251,7 +251,7 @@
                 class="text-primary">全景</span></h2>
             <p class="text-on-surface-variant max-w-4xl mb-10 text-[14px]">先宏的產品與服務已形成完整的企業數位創新生態系，從
                 AI 應用、流程自動化到系統整合，協助客戶逐步推進數位轉型。</p>
-            <img src="/assets/img/about/digital_innovation_landscape.jpg" alt="先宏數位創新與 AI 應用全景圖"
+            <img src="assets/img/about/digital_innovation_landscape.jpg" alt="先宏數位創新與 AI 應用全景圖"
                  class="max-w-full h-auto mx-auto block ml-[0px] mr-[0px] border border-outline-variant" />
             <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] mb-[0px] pb-[20px]">
                 先宏數位創新與 AI 應用全景 — 涵蓋金融數位化、流程自動化、企業整合三大面向。</p>
@@ -263,7 +263,7 @@
                 class="text-primary text-xs tracking-[0.4em] uppercase mb-4 block font-bold font-mono">// WHY_XRED</span>
             <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">為什麼<span
                 class="text-primary">選擇先宏</span>？</h2>
-            <img src="/assets/img/about/why_choose_xred.jpg" alt="為什麼選擇先宏 — 四層技術進程"
+            <img src="assets/img/about/why_choose_xred.jpg" alt="為什麼選擇先宏 — 四層技術進程"
                  class="w-full h-auto block border border-outline-variant" />
             <p class="text-on-surface-variant text-center mb-[0px] italic text-[12px] mt-[0px] pt-[20px] pb-[20px]">
                 從核心基礎到 AI 部署，先宏提供清晰的四階段升級路徑。</p>
@@ -321,14 +321,14 @@
                     </ul>
                     <div class="grid grid-cols-1 gap-8 mb-8">
                         <div class="bg-transparent p-0">
-                            <img src="/assets/img/about/nchc_taide_presentation.jpg" alt="先宏創辦人展示 Qilin AI 系統"
+                            <img src="assets/img/about/nchc_taide_presentation.jpg" alt="先宏創辦人展示 Qilin AI 系統"
                                  class="max-w-full h-auto mx-auto block border border-outline-variant" />
                             <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] mb-[0px] pb-[20px]">
                                 先宏創辦人於 TAIWAN AI RAP 暨 TAIDE 亮點成果發表會，現場展示 Qilin AI
                                 智慧理賠與決策輔助系統。</p>
                         </div>
                         <div class="bg-transparent p-0">
-                            <img src="/assets/img/about/esun_aicup_certificate.jpg" alt="教育部 AI CUP 2024 競賽獎狀"
+                            <img src="assets/img/about/esun_aicup_certificate.jpg" alt="教育部 AI CUP 2024 競賽獎狀"
                                  class="max-w-full h-auto mx-auto block border border-outline-variant" />
                             <p class="text-on-surface-variant text-center italic pt-[20px] mt-[0px] text-[12px] mb-[0px] pb-[20px]">
                                 教育部 AI CUP 2024 — 玉山人工智慧公開挑戰賽競賽獎狀</p>
@@ -355,7 +355,7 @@
             <h2 class="text-on-primary text-4xl md:text-5xl font-black mb-10 tracking-tighter">想與先宏一起連結經典、開啟
                 AI 未來？</h2>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="/ContactUs.html"
+                <a href="ContactUs.html"
                    class="bg-on-primary text-primary px-8 py-5 font-bold text-lg tracking-tighter hover:bg-background hover:text-on-background transition-all flex items-center justify-center gap-3 border border-on-primary">
                     <span class="material-symbols-outlined">calendar_month</span>
                     預約諮詢
@@ -420,6 +420,6 @@
         </div>
     </div>
 </footer>
-<script src="/assets/js/theme-toggle.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
 </body>
 </html>
