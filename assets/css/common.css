@@ -114,6 +114,9 @@ html.light {
   --logo-filter: none;
   --logo-bg: transparent;
   --logo-text: inherit;
+  --danger: #ff6b6b;
+  --danger-bg: #fff5f5;
+  --danger-border: #fecaca;
 }
 
 body {
